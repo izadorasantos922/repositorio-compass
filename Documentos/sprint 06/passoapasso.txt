@@ -1,0 +1,97 @@
+Passo a passo seguido para subir o EC2 e a ServeRest em uma máquina virtual:
+
+Acessei o link: https://academy-compass.awsapps.com/start#/
+Já tinha a conta criada com o e-mail da Compass
+
+Cliquei em cima do meu nome e selecionei a opção "AdministratorAccess".
+
+Na barra superior, ao lado da engrenagem (Configurações atuais do usuário), mudei de "Ohio us-east-2" para "Norte da Virgínia us-east-1".
+
+Criei uma pasta no meu diretório com o nome "EC2-AWS".
+
+Voltei ao navegador, na aba "Página inicial do console", e na caixa de pesquisa digitei "EC2", clicando na primeira opção "EC2 Virtual Servers in the Cloud".
+
+Na barra lateral esquerda, rolei para baixo até encontrar "Rede e segurança" e cliquei em "Pares de chaves"
+
+No canto superior direito, cliquei em "Criar par de chaves":
+Dei o nome de "ec2 pb aws", deixei o tipo de par de chaves como RSA e o formato como ".pem". Cliquei em "Criar par de chaves".
+O arquivo da chave foi baixado automaticamente e o movi para a pasta "EC2-AWS".
+
+Na caixa de pesquisa digitei "internet gateway" e cliquei na opção correspondente.
+
+No canto superior direito, cliquei em "Criar gateway da Internet":
+Nomeei como "ec2-serverest-gateway" e cliquei em "Criar gateway da Internet".
+
+Após criar o gateway, apareceu uma mensagem verde na parte superior da tela com o botão "Associar a uma VPC". Cliquei nele(pois eu j'a tinha feito uma VPC):
+Na tela seguinte, selecionei minha VPC que apareceu automaticamente e cliquei em "Associar gateway da Internet".
+
+Na barra lateral, fui até "Tabelas de rotas":
+Selecionei a rota disponível e, na tabela inferior que abriu, fui em "Rotas".
+Cliquei em "Editar rotas" > "Adicionar rota".
+Na coluna "Alvo", selecionei "Gateway da Internet" e o ID do gateway criado.
+Na coluna "Destino", selecionei "0.0.0.0/0".
+Cliquei em "Salvar alterações".
+Repeti esse processo para todas as rotas disponíveis na tabela (em rotas vazias, não fiz nada).
+
+Pesquisei novamente por EC2 e acessei a opção correspondente.
+
+No lado direito da página, cliquei no botão laranja "Executar instância".
+
+Na tela para iniciar a instância:
+Coloquei o nome "Linux ServeRest".
+Cliquei em "Adicionar mais tags".
+Em "Tipos de recurso", selecionei "instâncias" e "volumes".
+Adicionei a tag "Project" com valor "Programa de Bolsas", e a tag "CostCenter" com valor "Quality Assurance", ambas marcando "instâncias" e "volumes".
+
+Rolei a página até "Par de chaves (login)" e selecionei a chave criada anteriormente.
+
+Em "Configurações de rede":
+Marquei "Permitir tráfego HTTPS da Internet" e "Permitir tráfego HTTP da Internet".
+Cliquei em "Editar" ao lado de "Configurações de rede".
+Marquei "Atribuir IP público automaticamente" como "Habilitar".
+Rolei até "Adicionar regra de grupo de segurança".
+Tipo: "TCP personalizado", intervalo de portas: 3000, tipo de origem: "Qualquer lugar".
+
+Cliquei em "Executar instância", iniciando a máquina virtual na cloud.
+
+Cliquei em "Conectar-se à instância":
+Fui em "Cliente SSH" e copiei o comando para garantir que a chave não fique visível publicamente.
+Abri a pasta onde está minha chave com o Git Bash.
+Colei o comando no terminal.
+Voltei ao navegador e copiei o comando de "Exemplo:".
+Colei esse comando no terminal, confirmei com "yes" e dei enter.
+
+No terminal, digitei os seguintes comandos:
+sudo yum update -y
+sudo yum install gcc-c++ make -y
+curl --version
+mkdir serverestApi
+cd serverestApi
+sudo yum install -y nodejs
+npx serverest@latest
+Quando apareceu "Ok to proceed? (y)", digitei y e pressionei enter.
+Com isso, subi a ServeRest na instância EC2.
+
+No terminal apareceu o link para testar, mas deu erro porque estava usando "localhost".
+Voltei na página de conexão da instância, fui em "Conexão de instância do EC2" e copiei o "Endereço IPv4 público".
+Substituí "localhost" pelo endereço IPv4 no link e apareceu informações para mim como se eu estivesse no postman
+
+Para testar, copiei essa URL, abri o Postman, substituí a variável url no environment da ServeRest e testei as requisições — estavam funcionando.
+
+Após os testes:
+No terminal dei ctrl + c para interromper a ServeRest.
+No navegador, fui em "Instâncias", selecionei minha instância "Executando", cliquei em "Estado da instância" e selecionei "Interromper instância".
+Confirmei em "Interromper".
+
+Para iniciar novamente:
+Acessei o console da AWS, fui em EC2 > "Instâncias".
+Selecionei "Linux ServeRest", cliquei em "Estado da instância" > "Iniciar instância".
+Quando o estado apareceu como "Executando", cliquei em "Conectar".
+Fui em "Cliente SSH" e copiei o comando de "Exemplo:".
+Abri o terminal na pasta onde está minha chave, colei o comando e dei enter.
+Executei: npx serverest@latest
+O link fornecido no terminal ainda estava com "localhost", então voltei à página de conexão da instância, copiei o "Endereço IPv4 público" e substituí no link.
+A URL ficou: IPv4:3000
+
+Dificuldade:
+Tive dificuldades com o gateway da Internet. Conectei o gateway da Internet, mas depois ele estava desconectado — talvez eu tenha seguido algum passo errado. Por conta disso, não consegui conectar ao terminal. No entanto, decidi refazer tudo passo a passo desde o início, e dessa vez deu cert

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-06-05T12:11:51.365858" rpa="false" schemaversion="5">
+<suite id="s1" name="Cadastrar Produto" source="/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 06/challenge/testes_com_robot/produto/cadastrar_produto.robot">
+<test id="s1-t1" name="Cadastrar Produto Com Sucesso" line="16">
+<kw name="Criar Sessao">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-05T12:11:51.596185" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>serverest</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-05T12:11:51.595899" elapsed="0.000631"/>
+</kw>
+<status status="PASS" start="2025-06-05T12:11:51.594752" elapsed="0.001961"/>
+</kw>
+<kw name="Fazer Login E Obter Token">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-05T12:11:51.598055" level="INFO">${body} = {'email': 'fulano@qa.com', 'password': 'teste'}</msg>
+<var>${body}</var>
+<arg>email=${EMAIL}</arg>
+<arg>password=${SENHA}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-05T12:11:51.597426" elapsed="0.000693"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-05T12:11:52.186606" level="INFO">POST Request : url=https://compassuol.serverest.dev/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
+ body=b'{"email": "fulano@qa.com", "password": "teste"}' 
+ </msg>
+<msg time="2025-06-05T12:11:52.186827" level="INFO">POST Response : url=https://compassuol.serverest.dev/login 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'f4970db2a38e3899e418ee0016711876;o=1', 'date': 'Thu, 05 Jun 2025 15:11:51 GMT', 'server': 'Google Frontend', 'Content-Length': '265'} 
+ body={
+    "message": "Login realizado com sucesso",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ5MTM2MzExLCJleHAiOjE3NDkxMzY5MTF9.UdqmQORU3fjkmQdqDBs11XS5UVtDyWSC0OTI9eXKRDg"
+} 
+ </msg>
+<msg time="2025-06-05T12:11:52.186946" level="INFO">/home/izadora/Área de trabalho/documentos compass/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-05T12:11:52.189641" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/login</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-05T12:11:51.598286" elapsed="0.591677"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-05T12:11:52.194174" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ5MTM2MzExLCJleHAiOjE3NDkxMzY5MTF9.UdqmQORU3fjkmQdqDBs11XS5UVtDyWSC0OTI9eXKRDg</msg>
+<var>${token}</var>
+<arg>${response.json()}</arg>
+<arg>authorization</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-05T12:11:52.191168" elapsed="0.003070"/>
+</kw>
+<return>
+<value>${token}</value>
+<status status="PASS" start="2025-06-05T12:11:52.194359" elapsed="0.000096"/>
+</return>
+<msg time="2025-06-05T12:11:52.194704" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ5MTM2MzExLCJleHAiOjE3NDkxMzY5MTF9.UdqmQORU3fjkmQdqDBs11XS5UVtDyWSC0OTI9eXKRDg</msg>
+<var>${token}</var>
+<status status="PASS" start="2025-06-05T12:11:51.597039" elapsed="0.597708"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-06-05T12:11:52.202761" level="INFO">${nome_random} = KgGEy</msg>
+<var>${nome_random}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-06-05T12:11:52.195032" elapsed="0.007812"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-05T12:11:52.203529" level="INFO">${nome_produto} = Produto KgGEy</msg>
+<var>${nome_produto}</var>
+<arg>Produto ${nome_random}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-05T12:11:52.203210" elapsed="0.000374"/>
+</kw>
+<kw name="Cadastrar Produto">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-05T12:11:52.211591" level="INFO">${headers} = {'Authorization': 'Bearer Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ5MTM2MzExLCJleHAiOjE3NDkxMzY5MTF9.UdqmQORU3fjkmQdqDBs11XS5U...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-05T12:11:52.210429" elapsed="0.001227"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-05T12:11:52.212974" level="INFO">${body} = {'nome': 'Produto KgGEy', 'preco': '50', 'descricao': 'Produto de teste', 'quantidade': '10'}</msg>
+<var>${body}</var>
+<arg>nome=${nome}</arg>
+<arg>preco=${preco}</arg>
+<arg>descricao=${descricao}</arg>
+<arg>quantidade=${quantidade}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-05T12:11:52.211909" elapsed="0.001125"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-05T12:11:52.473937" level="INFO">POST Request : url=https://compassuol.serverest.dev/produtos 
+ path_url=/produtos 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ5MTM2MzExLCJleHAiOjE3NDkxMzY5MTF9.UdqmQORU3fjkmQdqDBs11XS5UVtDyWSC0OTI9eXKRDg', 'Content-Length': '93', 'Content-Type': 'application/json'} 
+ body=b'{"nome": "Produto KgGEy", "preco": "50", "descricao": "Produto de teste", "quantidade": "10"}' 
+ </msg>
+<msg time="2025-06-05T12:11:52.474080" level="INFO">POST Response : url=https://compassuol.serverest.dev/produtos 
+ status=401, reason=Unauthorized 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'fa64d09358655f8fe418ee00167117c9', 'date': 'Thu, 05 Jun 2025 15:11:52 GMT', 'server': 'Google Frontend', 'Content-Length': '103'} 
+ body={
+    "message": "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
+} 
+ </msg>
+<msg time="2025-06-05T12:11:52.474221" level="INFO">/home/izadora/Área de trabalho/documentos compass/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-05T12:11:52.474547" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/produtos</arg>
+<arg>headers=${headers}</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-05T12:11:52.213270" elapsed="0.261337"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2025-06-05T12:11:52.474742" elapsed="0.000090"/>
+</return>
+<msg time="2025-06-05T12:11:52.475066" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<var>${response}</var>
+<arg>${token}</arg>
+<arg>${nome_produto}</arg>
+<arg>${PRECO}</arg>
+<arg>${DESCRICAO}</arg>
+<arg>${QUANTIDADE}</arg>
+<status status="PASS" start="2025-06-05T12:11:52.203898" elapsed="0.271209"/>
+</kw>
+<kw name="Validar Status Code">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-05T12:11:52.477343" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2025-06-05T12:11:52.477602" level="FAIL">401 != 201</msg>
+<arg>${response.status_code}</arg>
+<arg>${esperado}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="FAIL" start="2025-06-05T12:11:52.475906" elapsed="0.001965">401 != 201</status>
+</kw>
+<arg>${response}</arg>
+<arg>201</arg>
+<status status="FAIL" start="2025-06-05T12:11:52.475407" elapsed="0.002685">401 != 201</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n=== Produto Cadastrado ===</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-06-05T12:11:52.478635" elapsed="0.000045"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-06-05T12:11:52.479030" elapsed="0.000033"/>
+</kw>
+<status status="FAIL" start="2025-06-05T12:11:51.593659" elapsed="0.885841">401 != 201</status>
+</test>
+<status status="FAIL" start="2025-06-05T12:11:51.367599" elapsed="1.112922"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cadastrar Produto" id="s1" pass="0" fail="1" skip="0">Cadastrar Produto</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-05T12:11:51.362099" level="WARN">Error in file '/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 06/challenge/testes_com_robot/produto/cadastrar_produto.robot' on line 34: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-06-05T12:11:51.362477" level="WARN">Error in file '/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 06/challenge/testes_com_robot/produto/cadastrar_produto.robot' on line 45: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

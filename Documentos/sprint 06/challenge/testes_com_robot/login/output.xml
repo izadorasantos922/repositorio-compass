@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-06-04T16:40:09.624197" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 06/challenge/testes_com_robot/login/login.robot">
+<test id="s1-t1" name="Login Com Sucesso" line="14">
+<kw name="Criar Sessao">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T16:40:09.820703" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>serverest</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T16:40:09.820274" elapsed="0.000986"/>
+</kw>
+<doc>Cria uma sessão HTTP para a API</doc>
+<status status="PASS" start="2025-06-04T16:40:09.819309" elapsed="0.002127"/>
+</kw>
+<kw name="Fazer Login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-04T16:40:09.823116" level="INFO">${body} = {'email': 'fulano@qa.com', 'password': 'teste'}</msg>
+<var>${body}</var>
+<arg>email=${email}</arg>
+<arg>password=${senha}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-04T16:40:09.822470" elapsed="0.000703"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T16:40:10.293545" level="INFO">POST Request : url=https://compassuol.serverest.dev/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
+ body=b'{"email": "fulano@qa.com", "password": "teste"}' 
+ </msg>
+<msg time="2025-06-04T16:40:10.293746" level="INFO">POST Response : url=https://compassuol.serverest.dev/login 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '8889b9942beecc2824dd7e24c643ed07;o=1', 'date': 'Wed, 04 Jun 2025 19:40:10 GMT', 'server': 'Google Frontend', 'Content-Length': '265'} 
+ body={
+    "message": "Login realizado com sucesso",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ5MDY2MDEwLCJleHAiOjE3NDkwNjY2MTB9.xV8mMzutnYIjPrxd12k6v24SD0yFbiCnTjKvHeunlqE"
+} 
+ </msg>
+<msg time="2025-06-04T16:40:10.293957" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/login</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T16:40:09.823372" elapsed="0.470632"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2025-06-04T16:40:10.294144" elapsed="0.000096"/>
+</return>
+<msg time="2025-06-04T16:40:10.294484" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${VALID_EMAIL}</arg>
+<arg>${VALID_SENHA}</arg>
+<doc>Realiza uma tentativa de login na API</doc>
+<status status="PASS" start="2025-06-04T16:40:09.821826" elapsed="0.472698"/>
+</kw>
+<kw name="Validar Status Code">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-04T16:40:10.296243" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>${esperado}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.295386" elapsed="0.000962"/>
+</kw>
+<arg>${response}</arg>
+<arg>200</arg>
+<doc>Valida se o código de status da resposta é o esperado</doc>
+<status status="PASS" start="2025-06-04T16:40:10.294874" elapsed="0.002022"/>
+</kw>
+<kw name="Validar Se Contém Chave">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${response.json()}</arg>
+<arg>${chave}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.297869" elapsed="0.000796"/>
+</kw>
+<arg>${response}</arg>
+<arg>authorization</arg>
+<doc>Valida se a resposta contém uma chave específica</doc>
+<status status="PASS" start="2025-06-04T16:40:10.297387" elapsed="0.001381"/>
+</kw>
+<kw name="Validar Se Contém Chave">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${response.json()}</arg>
+<arg>${chave}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.299800" elapsed="0.001821"/>
+</kw>
+<arg>${response}</arg>
+<arg>message</arg>
+<doc>Valida se a resposta contém uma chave específica</doc>
+<status status="PASS" start="2025-06-04T16:40:10.299326" elapsed="0.002449"/>
+</kw>
+<kw name="Validar Mensagem De Sucesso">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T16:40:10.304135" level="INFO">${message} = Login realizado com sucesso</msg>
+<var>${message}</var>
+<arg>${response.json()}</arg>
+<arg>message</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.303050" elapsed="0.001136"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${message}</arg>
+<arg>Login realizado com sucesso</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.304728" elapsed="0.000302"/>
+</kw>
+<arg>${response}</arg>
+<doc>Valida a mensagem de sucesso no login</doc>
+<status status="PASS" start="2025-06-04T16:40:10.302116" elapsed="0.003020"/>
+</kw>
+<doc>Valida o login com credenciais válidas</doc>
+<tag>autenticacao</tag>
+<tag>positivo</tag>
+<status status="PASS" start="2025-06-04T16:40:09.818025" elapsed="0.487465"/>
+</test>
+<test id="s1-t2" name="Login Com Credenciais Inválidas" line="24">
+<kw name="Criar Sessao">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T16:40:10.311169" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>serverest</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T16:40:10.310813" elapsed="0.003318"/>
+</kw>
+<doc>Cria uma sessão HTTP para a API</doc>
+<status status="PASS" start="2025-06-04T16:40:10.309145" elapsed="0.005170"/>
+</kw>
+<kw name="Fazer Login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-04T16:40:10.317895" level="INFO">${body} = {'email': 'usuario.inexistente@gmail.com', 'password': 'senha5444'}</msg>
+<var>${body}</var>
+<arg>email=${email}</arg>
+<arg>password=${senha}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.317289" elapsed="0.000662"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T16:40:10.908147" level="INFO">POST Request : url=https://compassuol.serverest.dev/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '67', 'Content-Type': 'application/json'} 
+ body=b'{"email": "usuario.inexistente@gmail.com", "password": "senha5444"}' 
+ </msg>
+<msg time="2025-06-04T16:40:10.908286" level="INFO">POST Response : url=https://compassuol.serverest.dev/login 
+ status=401, reason=Unauthorized 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'a65aa451dac76ad704c6dbf828119d69', 'date': 'Wed, 04 Jun 2025 19:40:11 GMT', 'server': 'Google Frontend', 'Content-Length': '48'} 
+ body={
+    "message": "Email e/ou senha inválidos"
+} 
+ </msg>
+<msg time="2025-06-04T16:40:10.908655" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/login</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.318161" elapsed="0.590539"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2025-06-04T16:40:10.908917" elapsed="0.000091"/>
+</return>
+<msg time="2025-06-04T16:40:10.909256" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<var>${response}</var>
+<arg>${INVALID_EMAIL}</arg>
+<arg>${INVALID_SENHA}</arg>
+<doc>Realiza uma tentativa de login na API</doc>
+<status status="PASS" start="2025-06-04T16:40:10.315495" elapsed="0.593799"/>
+</kw>
+<kw name="Validar Status Code">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-04T16:40:10.910983" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>${esperado}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.910226" elapsed="0.000861"/>
+</kw>
+<arg>${response}</arg>
+<arg>401</arg>
+<doc>Valida se o código de status da resposta é o esperado</doc>
+<status status="PASS" start="2025-06-04T16:40:10.909753" elapsed="0.001423"/>
+</kw>
+<kw name="Validar Se Contém Chave">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${response.json()}</arg>
+<arg>${chave}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.911847" elapsed="0.000734"/>
+</kw>
+<arg>${response}</arg>
+<arg>message</arg>
+<doc>Valida se a resposta contém uma chave específica</doc>
+<status status="PASS" start="2025-06-04T16:40:10.911447" elapsed="0.001221"/>
+</kw>
+<kw name="Validar Mensagem De Erro">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T16:40:10.913908" level="INFO">${message} = Email e/ou senha inválidos</msg>
+<var>${message}</var>
+<arg>${response.json()}</arg>
+<arg>message</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.913263" elapsed="0.000683"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${message}</arg>
+<arg>Email e/ou senha inválidos</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T16:40:10.914094" elapsed="0.000234"/>
+</kw>
+<arg>${response}</arg>
+<doc>Valida a mensagem de erro no login</doc>
+<status status="PASS" start="2025-06-04T16:40:10.912901" elapsed="0.001560"/>
+</kw>
+<doc>Valida o comportamento com credenciais inválidas</doc>
+<tag>autenticacao</tag>
+<tag>negativo</tag>
+<status status="PASS" start="2025-06-04T16:40:10.305893" elapsed="0.608783"/>
+</test>
+<doc>Testes de autenticação na API ServeRest</doc>
+<status status="PASS" start="2025-06-04T16:40:09.626112" elapsed="1.289659"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">autenticacao</stat>
+<stat pass="1" fail="0" skip="0">negativo</stat>
+<stat pass="1" fail="0" skip="0">positivo</stat>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="2" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

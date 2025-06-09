@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Testes da API ServeRest - Cadastro, Consulta, Atualização e Exclusão de Usuários
+Documentation     Testes da API ServeRest na funcionalidade usuario - Cadastro, Consulta, Atualização e Exclusão de Usuários
 Library           RequestsLibrary
 Library           Collections
 Library           String
@@ -15,7 +15,7 @@ ${senha_curta}    te
 *** Test Cases ***
 Cadastro Com Sucesso
     [Documentation]    Valida o cadastro de um usuário com dados válidos
-    [Tags]    positivo    cadastro
+    [Tags]    cadastro valido
     Criar Sessao
     ${email}    ${nome}=    Gerar Email Aleatorio
     ${response}=    Cadastrar    ${email}    ${senha}    ${nome}    true
@@ -26,7 +26,7 @@ Cadastro Com Sucesso
 
 Cadastro Com Senha Curta
     [Documentation]    Valida que não é possível cadastrar com senha muito curta
-    [Tags]    negativo    senha    curta
+    [Tags]    cadastro com senha curta
     Criar Sessao
     ${email}    ${nome}=    Gerar Email Aleatorio
     ${response}=    Cadastrar    ${email}    ${senha_curta}    ${nome}    false
@@ -35,7 +35,7 @@ Cadastro Com Senha Curta
 
 Cadastro Com Senha Longa
     [Documentation]    Valida que não é possível cadastrar com senha muito longa
-    [Tags]    negativo    senha    longa
+    [Tags]    cadastro com senha longa
     Criar Sessao
     ${email}    ${nome}=    Gerar Email Aleatorio
     ${response}=    Cadastrar    ${email}    ${senha_longa}    ${nome}    false
@@ -44,7 +44,7 @@ Cadastro Com Senha Longa
 
 Cadastro Com Gmail
     [Documentation]    Valida o cadastro com email do Gmail
-    [Tags]    negativo    email    gmail
+    [Tags]    cadastro com gmail
     Criar Sessao
     ${nome_aleatorio}=    Generate Random String    5    [LETTERS]
     ${email_gmail}=    Set Variable    fulano${nome_aleatorio}@gmail.com
@@ -54,7 +54,7 @@ Cadastro Com Gmail
 
 Cadastro Com Hotmail
     [Documentation]    Valida o cadastro com email do Hotmail
-    [Tags]    negativo    email    hotmail
+    [Tags]    cadastro com hotmail
     Criar Sessao
     ${nome_aleatorio}=    Generate Random String    5    [LETTERS]
     ${email_hotmail}=    Set Variable    fulano${nome_aleatorio}@hotmail.com
@@ -64,7 +64,7 @@ Cadastro Com Hotmail
 
 Cadastro Com Email Já Utilizado
     [Documentation]    Valida que não é possível cadastrar com email já existente
-    [Tags]    negativo    duplicado
+    [Tags]    cadastro com email ja cadastrado
     Criar Sessao
     ${email_fixo}=    Set Variable    fulano_fixo@qa.com
     ${response1}=    Cadastrar    ${email_fixo}    ${senha}    Usuário Fixo    true
@@ -75,7 +75,7 @@ Cadastro Com Email Já Utilizado
 
 Buscar Usuarios Com Sucesso
     [Documentation]    Valida a listagem de todos os usuários
-    [Tags]    get    usuarios
+    [Tags]    Buscar usuarios
     Criar Sessao
     ${response}=    Buscar Todos Usuarios
     Validar Status Code    ${response}    200
@@ -86,7 +86,7 @@ Buscar Usuarios Com Sucesso
 
 Cadastro E Atualizacao De Usuario
     [Documentation]    Valida o fluxo de cadastro e atualização de um usuário
-    [Tags]    cadastro    atualizacao
+    [Tags]    cadastro atualizacao
     Criar Sessao
     ${email}    ${nome}=    Gerar Email Aleatorio
     ${response}=    Cadastrar    ${email}    ${senha}    ${nome}    true
@@ -99,7 +99,7 @@ Cadastro E Atualizacao De Usuario
 
 Cadastro E Exclusao De Usuario
     [Documentation]    Valida o fluxo de cadastro e exclusão de um usuário
-    [Tags]    cadastro    exclusao
+    [Tags]    cadastro e exclusao
     Criar Sessao
     ${email}    ${nome}=    Gerar Email Aleatorio
     ${response}=    Cadastrar    ${email}    ${senha}    ${nome}    true

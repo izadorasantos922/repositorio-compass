@@ -13,7 +13,7 @@ ${INVALID_SENHA}  senha5444
 *** Test Cases ***
 Login Com Sucesso
     [Documentation]    Valida o login com credenciais válidas
-    [Tags]    positivo    autenticacao
+    [Tags]    autenticacao com dados validos
     Criar Sessao
     ${response}=    Fazer Login    ${VALID_EMAIL}    ${VALID_SENHA}
     Validar Status Code    ${response}    200
@@ -23,7 +23,7 @@ Login Com Sucesso
 
 Login Com Credenciais Inválidas
     [Documentation]    Valida o comportamento com credenciais inválidas
-    [Tags]    negativo    autenticacao
+    [Tags]    autenticacao com dados invalidos
     Criar Sessao
     ${response}=    Fazer Login    ${INVALID_EMAIL}    ${INVALID_SENHA}
     Validar Status Code    ${response}    401

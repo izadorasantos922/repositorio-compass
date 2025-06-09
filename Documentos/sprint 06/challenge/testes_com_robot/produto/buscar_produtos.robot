@@ -10,17 +10,17 @@ ${BASE_URL}       https://compassuol.serverest.dev
 *** Test Cases ***
 Buscar Produtos Com Sucesso
     [Documentation]    Verifica se a API retorna a lista de produtos
-    [Tags]    get    produtos
+    [Tags]    buscar produto
     Criar Sessao
     ${response}=    Buscar Todos Produtos
     Validar Status Code    ${response}    200
     Dictionary Should Contain Key    ${response.json()}    produtos
 
-Mostrar Lista De Produtos No Terminal
-    Create Session    serverest    ${BASE_URL}
-    ${response}=    GET On Session    serverest    /produtos
-    Log To Console    \n=== Lista de Produtos ===
-    Log To Console    ${response.json()}
+# Mostrar Lista De Produtos No Terminal
+#     Create Session    serverest    ${BASE_URL}
+#     ${response}=    GET On Session    serverest    /produtos
+#     Log To Console    \n=== Lista de Produtos ===
+#     Log To Console    ${response.json()}
 
 *** Keywords ***
 Criar Sessao

@@ -1,784 +1,767 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-06-05T17:08:30.060183" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-06-06T14:40:06.573291" rpa="false" schemaversion="5">
 <suite id="s1" name="Usuario" source="/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 06/challenge/testes_com_robot/usuario/usuario.robot">
 <test id="s1-t1" name="Cadastro Com Sucesso" line="16">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:30.253726" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:06.828720" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:30.252885" elapsed="0.001208"/>
+<status status="PASS" start="2025-06-06T14:40:06.828163" elapsed="0.000969"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:30.251513" elapsed="0.002744"/>
+<status status="PASS" start="2025-06-06T14:40:06.826210" elapsed="0.004870"/>
 </kw>
 <kw name="Gerar Email Aleatorio">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-05T17:08:30.255493" level="INFO">${nome_aleatorio} = ZPkyZ</msg>
+<msg time="2025-06-06T14:40:06.836780" level="INFO">${nome_aleatorio} = HnIQO</msg>
 <var>${nome_aleatorio}</var>
 <arg>5</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.255071" elapsed="0.000475"/>
+<status status="PASS" start="2025-06-06T14:40:06.834524" elapsed="0.002362"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:30.255997" level="INFO">${email} = fulanoZPkyZ@qa.com</msg>
+<msg time="2025-06-06T14:40:06.837509" level="INFO">${email} = fulanoHnIQO@qa.com</msg>
 <var>${email}</var>
 <arg>fulano${nome_aleatorio}@qa.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.255726" elapsed="0.000310"/>
+<status status="PASS" start="2025-06-06T14:40:06.837169" elapsed="0.000382"/>
 </kw>
 <return>
 <value>${email}</value>
 <value>${nome_aleatorio}</value>
-<status status="PASS" start="2025-06-05T17:08:30.256125" elapsed="0.000086"/>
+<status status="PASS" start="2025-06-06T14:40:06.837644" elapsed="0.000093"/>
 </return>
-<msg time="2025-06-05T17:08:30.256592" level="INFO">${email} = fulanoZPkyZ@qa.com</msg>
-<msg time="2025-06-05T17:08:30.256657" level="INFO">${nome} = ZPkyZ</msg>
+<msg time="2025-06-06T14:40:06.838040" level="INFO">${email} = fulanoHnIQO@qa.com</msg>
+<msg time="2025-06-06T14:40:06.838105" level="INFO">${nome} = HnIQO</msg>
 <var>${email}</var>
 <var>${nome}</var>
-<status status="PASS" start="2025-06-05T17:08:30.254647" elapsed="0.002050"/>
+<status status="PASS" start="2025-06-06T14:40:06.831675" elapsed="0.006469"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:30.258380" level="INFO">${body} = {'nome': 'ZPkyZ', 'email': 'fulanoZPkyZ@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
+<msg time="2025-06-06T14:40:06.842340" level="INFO">${body} = {'nome': 'HnIQO', 'email': 'fulanoHnIQO@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.257704" elapsed="0.000726"/>
+<status status="PASS" start="2025-06-06T14:40:06.840042" elapsed="0.002374"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:30.713241" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:07.718195" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '94', 'Content-Type': 'application/json'} 
- body=b'{"nome": "ZPkyZ", "email": "fulanoZPkyZ@qa.com", "password": "teste", "administrador": "true"}' 
+ body=b'{"nome": "HnIQO", "email": "fulanoHnIQO@qa.com", "password": "teste", "administrador": "true"}' 
  </msg>
-<msg time="2025-06-05T17:08:30.713473" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:07.719554" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'e3c88099b4fbfc53f72b583b247ace9f;o=1', 'date': 'Thu, 05 Jun 2025 20:08:30 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '527de3a78855ab3794204fd336c05244;o=1', 'date': 'Fri, 06 Jun 2025 17:40:07 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "rimqz0CZKvgL4LHR"
+    "_id": "LA3YWFVxM3lbv4YA"
 } 
  </msg>
-<msg time="2025-06-05T17:08:30.713980" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:07.720134" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.258596" elapsed="0.455450"/>
+<status status="PASS" start="2025-06-06T14:40:06.842752" elapsed="0.877725"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:30.714163" elapsed="0.000083"/>
+<status status="PASS" start="2025-06-06T14:40:07.720622" elapsed="0.000097"/>
 </return>
-<msg time="2025-06-05T17:08:30.714505" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:07.720958" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${email}</arg>
 <arg>${senha}</arg>
 <arg>${nome}</arg>
 <arg>true</arg>
-<status status="PASS" start="2025-06-05T17:08:30.257051" elapsed="0.457491"/>
+<status status="PASS" start="2025-06-06T14:40:06.838511" elapsed="0.882488"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:30.716150" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:07.723164" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.715382" elapsed="0.000864"/>
+<status status="PASS" start="2025-06-06T14:40:07.722306" elapsed="0.000982"/>
 </kw>
 <arg>${response}</arg>
 <arg>201</arg>
-<status status="PASS" start="2025-06-05T17:08:30.714866" elapsed="0.001497"/>
+<status status="PASS" start="2025-06-06T14:40:07.721386" elapsed="0.002028"/>
 </kw>
 <kw name="Validar Se Contém ID">
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${response.json()}</arg>
 <arg>${chave}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.717033" elapsed="0.000765"/>
+<status status="PASS" start="2025-06-06T14:40:07.724800" elapsed="0.002155"/>
 </kw>
 <arg>${response}</arg>
 <arg>_id</arg>
-<status status="PASS" start="2025-06-05T17:08:30.716633" elapsed="0.001253"/>
+<status status="PASS" start="2025-06-06T14:40:07.724275" elapsed="0.004415"/>
 </kw>
 <kw name="Validar Se Contém Chave">
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${response.json()}</arg>
 <arg>${chave}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.718539" elapsed="0.000608"/>
+<status status="PASS" start="2025-06-06T14:40:07.733369" elapsed="0.003163"/>
 </kw>
 <arg>${response}</arg>
 <arg>message</arg>
-<status status="PASS" start="2025-06-05T17:08:30.718107" elapsed="0.001125"/>
+<status status="PASS" start="2025-06-06T14:40:07.729560" elapsed="0.007170"/>
 </kw>
 <kw name="Validar Mensagem De Sucesso No Cadastro">
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-05T17:08:30.721804" level="INFO">${message} = Cadastro realizado com sucesso</msg>
+<msg time="2025-06-06T14:40:07.738769" level="INFO">${message} = Cadastro realizado com sucesso</msg>
 <var>${message}</var>
 <arg>${response.json()}</arg>
 <arg>message</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.719980" elapsed="0.001889"/>
+<status status="PASS" start="2025-06-06T14:40:07.737774" elapsed="0.001049"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${message}</arg>
 <arg>Cadastro realizado com sucesso</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.722122" elapsed="0.000316"/>
+<status status="PASS" start="2025-06-06T14:40:07.739062" elapsed="0.000292"/>
 </kw>
 <arg>${response}</arg>
-<status status="PASS" start="2025-06-05T17:08:30.719467" elapsed="0.003082"/>
+<status status="PASS" start="2025-06-06T14:40:07.737106" elapsed="0.002354"/>
 </kw>
 <doc>Valida o cadastro de um usuário com dados válidos</doc>
-<tag>cadastro</tag>
-<tag>positivo</tag>
-<status status="PASS" start="2025-06-05T17:08:30.250198" elapsed="0.472600"/>
+<tag>cadastro valido</tag>
+<status status="PASS" start="2025-06-06T14:40:06.824759" elapsed="0.916930"/>
 </test>
 <test id="s1-t2" name="Cadastro Com Senha Curta" line="27">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:30.724603" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:07.745699" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:30.724284" elapsed="0.000622"/>
+<status status="PASS" start="2025-06-06T14:40:07.744239" elapsed="0.001897"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:30.723893" elapsed="0.001131"/>
+<status status="PASS" start="2025-06-06T14:40:07.743644" elapsed="0.002655"/>
 </kw>
 <kw name="Gerar Email Aleatorio">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-05T17:08:30.726092" level="INFO">${nome_aleatorio} = Xfwke</msg>
+<msg time="2025-06-06T14:40:07.752425" level="INFO">${nome_aleatorio} = XhqtE</msg>
 <var>${nome_aleatorio}</var>
 <arg>5</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.725737" elapsed="0.000401"/>
+<status status="PASS" start="2025-06-06T14:40:07.751747" elapsed="0.000743"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:30.727551" level="INFO">${email} = fulanoXfwke@qa.com</msg>
+<msg time="2025-06-06T14:40:07.753163" level="INFO">${email} = fulanoXhqtE@qa.com</msg>
 <var>${email}</var>
 <arg>fulano${nome_aleatorio}@qa.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.726302" elapsed="0.001306"/>
+<status status="PASS" start="2025-06-06T14:40:07.752705" elapsed="0.000498"/>
 </kw>
 <return>
 <value>${email}</value>
 <value>${nome_aleatorio}</value>
-<status status="PASS" start="2025-06-05T17:08:30.727715" elapsed="0.000079"/>
+<status status="PASS" start="2025-06-06T14:40:07.753289" elapsed="0.000081"/>
 </return>
-<msg time="2025-06-05T17:08:30.728165" level="INFO">${email} = fulanoXfwke@qa.com</msg>
-<msg time="2025-06-05T17:08:30.728228" level="INFO">${nome} = Xfwke</msg>
+<msg time="2025-06-06T14:40:07.753626" level="INFO">${email} = fulanoXhqtE@qa.com</msg>
+<msg time="2025-06-06T14:40:07.755591" level="INFO">${nome} = XhqtE</msg>
 <var>${email}</var>
 <var>${nome}</var>
-<status status="PASS" start="2025-06-05T17:08:30.725359" elapsed="0.002906"/>
+<status status="PASS" start="2025-06-06T14:40:07.750357" elapsed="0.005292"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:30.729862" level="INFO">${body} = {'nome': 'Xfwke', 'email': 'fulanoXfwke@qa.com', 'password': 'te', 'administrador': 'false'}</msg>
+<msg time="2025-06-06T14:40:07.758883" level="INFO">${body} = {'nome': 'XhqtE', 'email': 'fulanoXhqtE@qa.com', 'password': 'te', 'administrador': 'false'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.729292" elapsed="0.000620"/>
+<status status="PASS" start="2025-06-06T14:40:07.757271" elapsed="0.001683"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:31.324947" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:08.434284" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '92', 'Content-Type': 'application/json'} 
- body=b'{"nome": "Xfwke", "email": "fulanoXfwke@qa.com", "password": "te", "administrador": "false"}' 
+ body=b'{"nome": "XhqtE", "email": "fulanoXhqtE@qa.com", "password": "te", "administrador": "false"}' 
  </msg>
-<msg time="2025-06-05T17:08:31.325083" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:08.434437" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '38b7a5479963e10353e3669289c17594', 'date': 'Thu, 05 Jun 2025 20:08:31 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '8ded7ce13113849e67d87526ed7e0f6b', 'date': 'Fri, 06 Jun 2025 17:40:08 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "mPGiAh49tLtamYVk"
+    "_id": "NIqMsH6GZz5XikJD"
 } 
  </msg>
-<msg time="2025-06-05T17:08:31.325273" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:08.434630" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:30.730095" elapsed="0.595221"/>
+<status status="PASS" start="2025-06-06T14:40:07.759769" elapsed="0.674905"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:31.325509" elapsed="0.000092"/>
+<status status="PASS" start="2025-06-06T14:40:08.434805" elapsed="0.000788"/>
 </return>
-<msg time="2025-06-05T17:08:31.325844" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:08.435859" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${email}</arg>
 <arg>${senha_curta}</arg>
 <arg>${nome}</arg>
 <arg>false</arg>
-<status status="PASS" start="2025-06-05T17:08:30.728632" elapsed="0.597251"/>
+<status status="PASS" start="2025-06-06T14:40:07.756526" elapsed="0.679386"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:31.327774" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:08.440043" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2025-06-05T17:08:31.327965" level="FAIL">201 != 400</msg>
+<msg time="2025-06-06T14:40:08.441605" level="FAIL">201 != 400</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2025-06-05T17:08:31.327062" elapsed="0.001138">201 != 400</status>
+<status status="FAIL" start="2025-06-06T14:40:08.437853" elapsed="0.004102">201 != 400</status>
 </kw>
 <arg>${response}</arg>
 <arg>400</arg>
-<status status="FAIL" start="2025-06-05T17:08:31.326233" elapsed="0.002196">201 != 400</status>
+<status status="FAIL" start="2025-06-06T14:40:08.436293" elapsed="0.005906">201 != 400</status>
 </kw>
 <kw name="Validar Mensagem De Erro Senha">
 <arg>${response}</arg>
-<status status="NOT RUN" start="2025-06-05T17:08:31.328710" elapsed="0.000036"/>
+<status status="NOT RUN" start="2025-06-06T14:40:08.442567" elapsed="0.000048"/>
 </kw>
 <doc>Valida que não é possível cadastrar com senha muito curta</doc>
-<tag>curta</tag>
-<tag>negativo</tag>
-<tag>senha</tag>
-<status status="FAIL" start="2025-06-05T17:08:30.723205" elapsed="0.605805">201 != 400</status>
+<tag>cadastro com senha curta</tag>
+<status status="FAIL" start="2025-06-06T14:40:07.742746" elapsed="0.703714">201 != 400</status>
 </test>
 <test id="s1-t3" name="Cadastro Com Senha Longa" line="36">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:31.330647" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:08.449829" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:31.330404" elapsed="0.000496"/>
+<status status="PASS" start="2025-06-06T14:40:08.449527" elapsed="0.000596"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:31.330030" elapsed="0.000965"/>
+<status status="PASS" start="2025-06-06T14:40:08.449052" elapsed="0.001760"/>
 </kw>
 <kw name="Gerar Email Aleatorio">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-05T17:08:31.332391" level="INFO">${nome_aleatorio} = YFoWj</msg>
+<msg time="2025-06-06T14:40:08.453290" level="INFO">${nome_aleatorio} = EnATS</msg>
 <var>${nome_aleatorio}</var>
 <arg>5</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-05T17:08:31.332000" elapsed="0.000443"/>
+<status status="PASS" start="2025-06-06T14:40:08.452916" elapsed="0.000430"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:31.332858" level="INFO">${email} = fulanoYFoWj@qa.com</msg>
+<msg time="2025-06-06T14:40:08.453758" level="INFO">${email} = fulanoEnATS@qa.com</msg>
 <var>${email}</var>
 <arg>fulano${nome_aleatorio}@qa.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:31.332619" elapsed="0.000278"/>
+<status status="PASS" start="2025-06-06T14:40:08.453518" elapsed="0.000279"/>
 </kw>
 <return>
 <value>${email}</value>
 <value>${nome_aleatorio}</value>
-<status status="PASS" start="2025-06-05T17:08:31.332972" elapsed="0.000066"/>
+<status status="PASS" start="2025-06-06T14:40:08.454516" elapsed="0.000121"/>
 </return>
-<msg time="2025-06-05T17:08:31.333286" level="INFO">${email} = fulanoYFoWj@qa.com</msg>
-<msg time="2025-06-05T17:08:31.333452" level="INFO">${nome} = YFoWj</msg>
+<msg time="2025-06-06T14:40:08.454984" level="INFO">${email} = fulanoEnATS@qa.com</msg>
+<msg time="2025-06-06T14:40:08.455051" level="INFO">${nome} = EnATS</msg>
 <var>${email}</var>
 <var>${nome}</var>
-<status status="PASS" start="2025-06-05T17:08:31.331227" elapsed="0.002263"/>
+<status status="PASS" start="2025-06-06T14:40:08.452366" elapsed="0.002722"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:31.335043" level="INFO">${body} = {'nome': 'YFoWj', 'email': 'fulanoYFoWj@qa.com', 'password': 'teste123546987456987', 'administrador': 'false'}</msg>
+<msg time="2025-06-06T14:40:08.458124" level="INFO">${body} = {'nome': 'EnATS', 'email': 'fulanoEnATS@qa.com', 'password': 'teste123546987456987', 'administrador': 'false'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:31.334480" elapsed="0.000614"/>
+<status status="PASS" start="2025-06-06T14:40:08.456699" elapsed="0.001488"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:31.939283" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:09.154891" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '110', 'Content-Type': 'application/json'} 
- body=b'{"nome": "YFoWj", "email": "fulanoYFoWj@qa.com", "password": "teste123546987456987", "administrador": "false"}' 
+ body=b'{"nome": "EnATS", "email": "fulanoEnATS@qa.com", "password": "teste123546987456987", "administrador": "false"}' 
  </msg>
-<msg time="2025-06-05T17:08:31.939461" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:09.155027" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '4dbfe892a113f980b31bcc48d920123f', 'date': 'Thu, 05 Jun 2025 20:08:31 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'b0c625014584c7a946209a426e2e90ff', 'date': 'Fri, 06 Jun 2025 17:40:08 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "KWkRiOpGuidHDBCi"
+    "_id": "U6GsJeLsmeN7Vt2a"
 } 
  </msg>
-<msg time="2025-06-05T17:08:31.939648" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:09.155218" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:31.335267" elapsed="0.604423"/>
+<status status="PASS" start="2025-06-06T14:40:08.458429" elapsed="0.696833"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:31.939931" elapsed="0.000074"/>
+<status status="PASS" start="2025-06-06T14:40:09.155502" elapsed="0.000077"/>
 </return>
-<msg time="2025-06-05T17:08:31.940212" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:09.155793" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${email}</arg>
 <arg>${senha_longa}</arg>
 <arg>${nome}</arg>
 <arg>false</arg>
-<status status="PASS" start="2025-06-05T17:08:31.333822" elapsed="0.606430"/>
+<status status="PASS" start="2025-06-06T14:40:08.455473" elapsed="0.700360"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:31.941778" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:09.175552" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2025-06-05T17:08:31.941937" level="FAIL">201 != 400</msg>
+<msg time="2025-06-06T14:40:09.175740" level="FAIL">201 != 400</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2025-06-05T17:08:31.941068" elapsed="0.000990">201 != 400</status>
+<status status="FAIL" start="2025-06-06T14:40:09.174763" elapsed="0.021171">201 != 400</status>
 </kw>
 <arg>${response}</arg>
 <arg>400</arg>
-<status status="FAIL" start="2025-06-05T17:08:31.940571" elapsed="0.001646">201 != 400</status>
+<status status="FAIL" start="2025-06-06T14:40:09.172678" elapsed="0.023650">201 != 400</status>
 </kw>
 <kw name="Validar Mensagem De Erro Senha">
 <arg>${response}</arg>
-<status status="NOT RUN" start="2025-06-05T17:08:31.942488" elapsed="0.000037"/>
+<status status="NOT RUN" start="2025-06-06T14:40:09.198155" elapsed="0.000085"/>
 </kw>
 <doc>Valida que não é possível cadastrar com senha muito longa</doc>
-<tag>longa</tag>
-<tag>negativo</tag>
-<tag>senha</tag>
-<status status="FAIL" start="2025-06-05T17:08:31.329478" elapsed="0.613332">201 != 400</status>
+<tag>cadastro com senha longa</tag>
+<status status="FAIL" start="2025-06-06T14:40:08.447857" elapsed="0.753652">201 != 400</status>
 </test>
 <test id="s1-t4" name="Cadastro Com Gmail" line="45">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:31.944685" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:09.234676" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:31.944441" elapsed="0.000466"/>
+<status status="PASS" start="2025-06-06T14:40:09.232724" elapsed="0.002381"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:31.944088" elapsed="0.000913"/>
+<status status="PASS" start="2025-06-06T14:40:09.228234" elapsed="0.007060"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-05T17:08:31.945532" level="INFO">${nome_aleatorio} = rMFpf</msg>
+<msg time="2025-06-06T14:40:09.236393" level="INFO">${nome_aleatorio} = FLtiG</msg>
 <var>${nome_aleatorio}</var>
 <arg>5</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-05T17:08:31.945199" elapsed="0.000370"/>
+<status status="PASS" start="2025-06-06T14:40:09.235911" elapsed="0.000528"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:31.946000" level="INFO">${email_gmail} = fulanorMFpf@gmail.com</msg>
+<msg time="2025-06-06T14:40:09.236996" level="INFO">${email_gmail} = fulanoFLtiG@gmail.com</msg>
 <var>${email_gmail}</var>
 <arg>fulano${nome_aleatorio}@gmail.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:31.945771" elapsed="0.000267"/>
+<status status="PASS" start="2025-06-06T14:40:09.236722" elapsed="0.000312"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:31.947458" level="INFO">${body} = {'nome': 'rMFpf', 'email': 'fulanorMFpf@gmail.com', 'password': 'teste', 'administrador': 'true'}</msg>
+<msg time="2025-06-06T14:40:09.239296" level="INFO">${body} = {'nome': 'FLtiG', 'email': 'fulanoFLtiG@gmail.com', 'password': 'teste', 'administrador': 'true'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:31.946923" elapsed="0.000583"/>
+<status status="PASS" start="2025-06-06T14:40:09.238011" elapsed="0.001345"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:32.442715" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:09.972774" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '97', 'Content-Type': 'application/json'} 
- body=b'{"nome": "rMFpf", "email": "fulanorMFpf@gmail.com", "password": "teste", "administrador": "true"}' 
+ body=b'{"nome": "FLtiG", "email": "fulanoFLtiG@gmail.com", "password": "teste", "administrador": "true"}' 
  </msg>
-<msg time="2025-06-05T17:08:32.442848" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:09.972917" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '3d356724942ff0f75c721b6238aef8ba', 'date': 'Thu, 05 Jun 2025 20:08:32 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '8cd11fa6a27a1fe5da200e10cf68abc8', 'date': 'Fri, 06 Jun 2025 17:40:09 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "7oDKIspUXKXs0JCk"
+    "_id": "4HjVQdoJZGqs0pbl"
 } 
  </msg>
-<msg time="2025-06-05T17:08:32.443054" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:09.973139" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:31.947686" elapsed="0.495410"/>
+<status status="PASS" start="2025-06-06T14:40:09.239615" elapsed="0.733571"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:32.443219" elapsed="0.000074"/>
+<status status="PASS" start="2025-06-06T14:40:09.973315" elapsed="0.000077"/>
 </return>
-<msg time="2025-06-05T17:08:32.443554" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:09.973607" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${email_gmail}</arg>
 <arg>${senha}</arg>
 <arg>${nome_aleatorio}</arg>
 <arg>true</arg>
-<status status="PASS" start="2025-06-05T17:08:31.946296" elapsed="0.497295"/>
+<status status="PASS" start="2025-06-06T14:40:09.237394" elapsed="0.736253"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:32.445074" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:09.976585" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2025-06-05T17:08:32.445221" level="FAIL">201 != 400</msg>
+<msg time="2025-06-06T14:40:09.976777" level="FAIL">201 != 400</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2025-06-05T17:08:32.444375" elapsed="0.000945">201 != 400</status>
+<status status="FAIL" start="2025-06-06T14:40:09.975691" elapsed="0.001864">201 != 400</status>
 </kw>
 <arg>${response}</arg>
 <arg>400</arg>
-<status status="FAIL" start="2025-06-05T17:08:32.443906" elapsed="0.001597">201 != 400</status>
+<status status="FAIL" start="2025-06-06T14:40:09.975121" elapsed="0.002653">201 != 400</status>
 </kw>
 <kw name="Validar Se Contém ID">
 <arg>${response}</arg>
 <arg>_id</arg>
-<status status="NOT RUN" start="2025-06-05T17:08:32.445760" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-06-06T14:40:09.979677" elapsed="0.000085"/>
 </kw>
 <doc>Valida o cadastro com email do Gmail</doc>
-<tag>email</tag>
-<tag>gmail</tag>
-<tag>positivo</tag>
-<status status="FAIL" start="2025-06-05T17:08:31.943205" elapsed="0.502822">201 != 400</status>
+<tag>cadastro com gmail</tag>
+<status status="FAIL" start="2025-06-06T14:40:09.211760" elapsed="0.771415">201 != 400</status>
 </test>
 <test id="s1-t5" name="Cadastro Com Hotmail" line="55">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:32.448112" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:09.987315" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:32.447839" elapsed="0.000588"/>
+<status status="PASS" start="2025-06-06T14:40:09.986968" elapsed="0.000678"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:32.447359" elapsed="0.001171"/>
+<status status="PASS" start="2025-06-06T14:40:09.986365" elapsed="0.001414"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-05T17:08:32.449098" level="INFO">${nome_aleatorio} = fQunV</msg>
+<msg time="2025-06-06T14:40:09.988481" level="INFO">${nome_aleatorio} = GqOis</msg>
 <var>${nome_aleatorio}</var>
 <arg>5</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-05T17:08:32.448796" elapsed="0.000342"/>
+<status status="PASS" start="2025-06-06T14:40:09.988123" elapsed="0.000401"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:32.450765" level="INFO">${email_hotmail} = fulanofQunV@hotmail.com</msg>
+<msg time="2025-06-06T14:40:09.989260" level="INFO">${email_hotmail} = fulanoGqOis@hotmail.com</msg>
 <var>${email_hotmail}</var>
 <arg>fulano${nome_aleatorio}@hotmail.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:32.450356" elapsed="0.000464"/>
+<status status="PASS" start="2025-06-06T14:40:09.988754" elapsed="0.000548"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:32.452278" level="INFO">${body} = {'nome': 'fQunV', 'email': 'fulanofQunV@hotmail.com', 'password': 'teste', 'administrador': 'true'}</msg>
+<msg time="2025-06-06T14:40:09.991174" level="INFO">${body} = {'nome': 'GqOis', 'email': 'fulanoGqOis@hotmail.com', 'password': 'teste', 'administrador': 'true'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:32.451774" elapsed="0.000667"/>
+<status status="PASS" start="2025-06-06T14:40:09.990420" elapsed="0.000982"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:32.963433" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:10.633483" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '99', 'Content-Type': 'application/json'} 
- body=b'{"nome": "fQunV", "email": "fulanofQunV@hotmail.com", "password": "teste", "administrador": "true"}' 
+ body=b'{"nome": "GqOis", "email": "fulanoGqOis@hotmail.com", "password": "teste", "administrador": "true"}' 
  </msg>
-<msg time="2025-06-05T17:08:32.963569" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:10.633688" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '83752806692bd274a032d3de3bcaf996', 'date': 'Thu, 05 Jun 2025 20:08:32 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '1f0f5444ecf4d4e011f08bff94779320', 'date': 'Fri, 06 Jun 2025 17:40:10 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "OHAU6UmMSwmDrueH"
+    "_id": "vZzvBuU1mOs7eMAy"
 } 
  </msg>
-<msg time="2025-06-05T17:08:32.963749" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:10.633932" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:32.452623" elapsed="0.511167"/>
+<status status="PASS" start="2025-06-06T14:40:09.991624" elapsed="0.642355"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:32.963901" elapsed="0.000072"/>
+<status status="PASS" start="2025-06-06T14:40:10.634111" elapsed="0.000084"/>
 </return>
-<msg time="2025-06-05T17:08:32.964171" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:10.634411" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${email_hotmail}</arg>
 <arg>${senha}</arg>
 <arg>${nome_aleatorio}</arg>
 <arg>true</arg>
-<status status="PASS" start="2025-06-05T17:08:32.451182" elapsed="0.513025"/>
+<status status="PASS" start="2025-06-06T14:40:09.989667" elapsed="0.644783"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:32.965719" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:10.636055" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2025-06-05T17:08:32.965861" level="FAIL">201 != 400</msg>
+<msg time="2025-06-06T14:40:10.636196" level="FAIL">201 != 400</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2025-06-05T17:08:32.965002" elapsed="0.000957">201 != 400</status>
+<status status="FAIL" start="2025-06-06T14:40:10.635335" elapsed="0.000959">201 != 400</status>
 </kw>
 <arg>${response}</arg>
 <arg>400</arg>
-<status status="FAIL" start="2025-06-05T17:08:32.964539" elapsed="0.001568">201 != 400</status>
+<status status="FAIL" start="2025-06-06T14:40:10.634814" elapsed="0.001628">201 != 400</status>
 </kw>
 <kw name="Validar Se Contém ID">
 <arg>${response}</arg>
 <arg>_id</arg>
-<status status="NOT RUN" start="2025-06-05T17:08:32.966376" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-06-06T14:40:10.636704" elapsed="0.000037"/>
 </kw>
 <doc>Valida o cadastro com email do Hotmail</doc>
-<tag>email</tag>
-<tag>hotmail</tag>
-<tag>positivo</tag>
-<status status="FAIL" start="2025-06-05T17:08:32.446408" elapsed="0.520248">201 != 400</status>
+<tag>cadastro com hotmail</tag>
+<status status="FAIL" start="2025-06-06T14:40:09.983918" elapsed="0.653058">201 != 400</status>
 </test>
 <test id="s1-t6" name="Cadastro Com Email Já Utilizado" line="65">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:32.968253" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:10.638787" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:32.968006" elapsed="0.000522"/>
+<status status="PASS" start="2025-06-06T14:40:10.638435" elapsed="0.000760"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:32.967693" elapsed="0.000927"/>
+<status status="PASS" start="2025-06-06T14:40:10.638021" elapsed="0.001298"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:32.969003" level="INFO">${email_fixo} = fulano_fixo@qa.com</msg>
+<msg time="2025-06-06T14:40:10.639845" level="INFO">${email_fixo} = fulano_fixo@qa.com</msg>
 <var>${email_fixo}</var>
 <arg>fulano_fixo@qa.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:32.968810" elapsed="0.000229"/>
+<status status="PASS" start="2025-06-06T14:40:10.639644" elapsed="0.000297"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:32.970263" level="INFO">${body} = {'nome': 'Usuário Fixo', 'email': 'fulano_fixo@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
+<msg time="2025-06-06T14:40:10.642196" level="INFO">${body} = {'nome': 'Usuário Fixo', 'email': 'fulano_fixo@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:32.969797" elapsed="0.000505"/>
+<status status="PASS" start="2025-06-06T14:40:10.641631" elapsed="0.000625"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:33.577617" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:11.301088" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '106', 'Content-Type': 'application/json'} 
  body=b'{"nome": "Usu\\u00e1rio Fixo", "email": "fulano_fixo@qa.com", "password": "teste", "administrador": "true"}' 
  </msg>
-<msg time="2025-06-05T17:08:33.577754" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:11.301251" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=400, reason=Bad Request 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '29af5951a4273f2e807b28b57a5c1465', 'date': 'Thu, 05 Jun 2025 20:08:33 GMT', 'server': 'Google Frontend', 'Content-Length': '53'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '0cfcbf96fbf2fec39748c181dde04ebe', 'date': 'Fri, 06 Jun 2025 17:40:11 GMT', 'server': 'Google Frontend', 'Content-Length': '53'} 
  body={
     "message": "Este email já está sendo usado"
 } 
  </msg>
-<msg time="2025-06-05T17:08:33.577945" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2025-06-06T14:40:11.302130" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:32.970485" elapsed="0.607502"/>
+<status status="PASS" start="2025-06-06T14:40:10.642444" elapsed="0.659737"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:33.578106" elapsed="0.000075"/>
+<status status="PASS" start="2025-06-06T14:40:11.302319" elapsed="0.000083"/>
 </return>
-<msg time="2025-06-05T17:08:33.578593" level="INFO">${response1} = &lt;Response [400]&gt;</msg>
+<msg time="2025-06-06T14:40:11.302630" level="INFO">${response1} = &lt;Response [400]&gt;</msg>
 <var>${response1}</var>
 <arg>${email_fixo}</arg>
 <arg>${senha}</arg>
 <arg>Usuário Fixo</arg>
 <arg>true</arg>
-<status status="PASS" start="2025-06-05T17:08:32.969293" elapsed="0.609428"/>
+<status status="PASS" start="2025-06-06T14:40:10.640894" elapsed="0.661776"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:33.583063" level="INFO">${body} = {'nome': 'Usuário Duplicado', 'email': 'fulano_fixo@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
+<msg time="2025-06-06T14:40:11.305784" level="INFO">${body} = {'nome': 'Usuário Duplicado', 'email': 'fulano_fixo@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:33.581427" elapsed="0.001767"/>
+<status status="PASS" start="2025-06-06T14:40:11.305181" elapsed="0.000668"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:33.884669" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:11.587721" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '111', 'Content-Type': 'application/json'} 
  body=b'{"nome": "Usu\\u00e1rio Duplicado", "email": "fulano_fixo@qa.com", "password": "teste", "administrador": "true"}' 
  </msg>
-<msg time="2025-06-05T17:08:33.884821" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:11.587887" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=400, reason=Bad Request 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '460b4eff6cc3c751807b28b57a5c1301', 'date': 'Thu, 05 Jun 2025 20:08:33 GMT', 'server': 'Google Frontend', 'Content-Length': '53'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'cc868472be4bba9f9748c181dde04388', 'date': 'Fri, 06 Jun 2025 17:40:11 GMT', 'server': 'Google Frontend', 'Content-Length': '53'} 
  body={
     "message": "Este email já está sendo usado"
 } 
  </msg>
-<msg time="2025-06-05T17:08:33.885166" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2025-06-06T14:40:11.588411" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:33.583742" elapsed="0.301470"/>
+<status status="PASS" start="2025-06-06T14:40:11.306250" elapsed="0.282210"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:33.885694" elapsed="0.000089"/>
+<status status="PASS" start="2025-06-06T14:40:11.588700" elapsed="0.000083"/>
 </return>
-<msg time="2025-06-05T17:08:33.886046" level="INFO">${response2} = &lt;Response [400]&gt;</msg>
+<msg time="2025-06-06T14:40:11.589028" level="INFO">${response2} = &lt;Response [400]&gt;</msg>
 <var>${response2}</var>
 <arg>${email_fixo}</arg>
 <arg>${senha}</arg>
 <arg>Usuário Duplicado</arg>
 <arg>true</arg>
-<status status="PASS" start="2025-06-05T17:08:33.579659" elapsed="0.306430"/>
+<status status="PASS" start="2025-06-06T14:40:11.303958" elapsed="0.285111"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:33.888399" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:11.590814" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:33.886942" elapsed="0.001592"/>
+<status status="PASS" start="2025-06-06T14:40:11.589981" elapsed="0.001045"/>
 </kw>
 <arg>${response2}</arg>
 <arg>400</arg>
-<status status="PASS" start="2025-06-05T17:08:33.886451" elapsed="0.002230"/>
+<status status="PASS" start="2025-06-06T14:40:11.589397" elapsed="0.001952"/>
 </kw>
 <kw name="Validar Se Contém Chave">
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${response.json()}</arg>
 <arg>${chave}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2025-06-05T17:08:33.889954" elapsed="0.001332"/>
+<status status="PASS" start="2025-06-06T14:40:11.592626" elapsed="0.001857"/>
 </kw>
 <arg>${response2}</arg>
 <arg>message</arg>
-<status status="PASS" start="2025-06-05T17:08:33.889016" elapsed="0.002448"/>
+<status status="PASS" start="2025-06-06T14:40:11.591818" elapsed="0.002857"/>
 </kw>
 <kw name="Validar Mensagem De Erro Email Já Usado">
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-05T17:08:33.895341" level="INFO">${message} = Este email já está sendo usado</msg>
+<msg time="2025-06-06T14:40:11.596658" level="INFO">${message} = Este email já está sendo usado</msg>
 <var>${message}</var>
 <arg>${response.json()}</arg>
 <arg>message</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-05T17:08:33.892847" elapsed="0.002620"/>
+<status status="PASS" start="2025-06-06T14:40:11.595826" elapsed="0.000886"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${message}</arg>
 <arg>Este email já está sendo usado</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-06-05T17:08:33.895768" elapsed="0.000386"/>
+<status status="PASS" start="2025-06-06T14:40:11.597499" elapsed="0.002068"/>
 </kw>
 <arg>${response2}</arg>
-<status status="PASS" start="2025-06-05T17:08:33.892283" elapsed="0.003995"/>
+<status status="PASS" start="2025-06-06T14:40:11.595158" elapsed="0.004618"/>
 </kw>
 <doc>Valida que não é possível cadastrar com email já existente</doc>
-<tag>duplicado</tag>
-<tag>negativo</tag>
-<status status="PASS" start="2025-06-05T17:08:32.967061" elapsed="0.929500"/>
+<tag>cadastro com email ja cadastrado</tag>
+<status status="PASS" start="2025-06-06T14:40:10.637332" elapsed="0.962750"/>
 </test>
 <test id="s1-t7" name="Buscar Usuarios Com Sucesso" line="76">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:33.898266" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:11.603405" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:33.897978" elapsed="0.000567"/>
+<status status="PASS" start="2025-06-06T14:40:11.602840" elapsed="0.000860"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:33.897587" elapsed="0.001076"/>
+<status status="PASS" start="2025-06-06T14:40:11.602210" elapsed="0.001617"/>
 </kw>
 <kw name="Buscar Todos Usuarios">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:34.604487" level="INFO">GET Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:12.458212" level="INFO">GET Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-06-05T17:08:34.604724" level="INFO">GET Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:12.460993" level="INFO">GET Response : url=https://compassuol.serverest.dev/usuarios 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'a303c5c8a2f7437606b1e31f1b4284e3', 'date': 'Thu, 05 Jun 2025 20:08:34 GMT', 'server': 'Google Frontend', 'Content-Length': '58359'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'b582cd03cac56774c222c8c8feb788e0', 'date': 'Fri, 06 Jun 2025 17:40:12 GMT', 'server': 'Google Frontend', 'Content-Length': '25625'} 
  body={
-    "quantidade": 268,
+    "quantidade": 119,
     "usuarios": [
         {
-            "nome": "Sarah Webb",
-            "email": "paguilar@compasso.com",
-            "password": "l(6@_NCt",
+            "nome": "Larry Perkins",
+            "email": "gerald71@compasso.com",
+            "password": "$*l&amp;5HIz",
             "administrador": "false",
-            "_id": "0DweFZec3kgjUAhd"
+            "_id": "0CpJkddm3VDEwPIu"
         },
         {
-            "nome": "Caso de teste 3",
-            "email": "Little@gmail.com",
+            "nome": "Kelly Harris",
+            "email": "william76@compasso.com",
+            "password": "5&amp;74QLpc",
+            "administrador": "false",
+            "_id": "0MRdvECv1ROnPXH1"
+        },
+        {
+            "nome": "LBvfg_Atualizado",
+            "email": "fulanoLBvfg@qa.com",
             "password": "teste",
             "administrador": "true",
-            "_id": "0NcD3v0Tt8HMUHwB"
+            "_id": "0bN9VtKcH1QpX6go"
         },
         {
-            "nome": "Teste Gmail User",
-            "email": "teste@gmail.com",
-            "password": "automation123",
+            "nome": "ovRFo",
+            "email": "fulanoovRFo@hotmail.com",
+            "password": "teste",
             "administrador": "true",
-            "_id": "0VXVYOlZBdUnGvTu"
-        },
-        {
-            "nome": "Matteo Novais",
-            "email": "lunnapimenta@example.com",
-            "password": "++@R4P(9Bq",
-            "administrador": "true",
-            "_id": "0XQBzjw6chDKQFXc"
-        },
-        {
-            "nome": "Stephen Beck DDS",
-            "email": "sandrahall@example.org",
-            "password": "F72465444",
-            "administrador": "true",
-            "_id": "0gWPisXfHrnQPzh0"
+            "_id": "0dN92RyqcSTpdfxk"
         },
         {
             "nome": "Fulano da Silva",
@@ -788,828 +771,833 @@
             "_id": "0uxuPY0cbmQhpEz1"
         },
         {
-            "nome": "Christopher Taylor",
-            "email": "kbaker@example.com",
-            "password": "G07218731",
+            "nome": "Monica Thompson",
+            "email": "brobinson@example.net",
+            "password": "h0!heT71^V",
             "administrador": "true",
-            "_id": "1HEsdszhzd8CwHlw"
+            "_id": "1JucebCrWzYi94re"
+        },
+        {
+            "nome": "Rodrigo",
+            "email": "thomasbrian@compasso.com",
+            "password": "senha01",
+            "administrador": "true",
+            "_id": "1cC5aMTwXCoNuUuh"
+        },
+        {
+            "nome": "Caso de teste 3",
+            "email": "Pouros@gmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "1fsIBXPJ1w42b0yx"
+        },
+        {
+            "nome": "Rodrigo",
+            "email": "jstevens@gmail.com",
+            "password": "senha01",
+            "administrador": "true",
+            "_id": "1wbwcH8zQW45Bw8l"
+        },
+        {
+            "nome": "Jamie Leach",
+            "email": "ojohnson@compasso.com",
+            "password": "@CwX4Xt2",
+            "administrador": "false",
+            "_id": "34JUWjdpoPQIbHJg"
+        },
+        {
+            "nome": "Gabriel Barbosa",
+            "email": "mlyn@emailteste.com",
+            "password": "4321",
+            "administrador": "true",
+            "_id": "3OJrk1U5NBmbMEoI"
+        },
+        {
+            "nome": "FLtiG",
+            "email": "fulanoFLtiG@gmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "4HjVQdoJZGqs0pbl"
+        },
+        {
+            "nome": "Rafaela Brito",
+            "email": "ufernandes@example.org",
+            "password": "^ZkZU3r@H2",
+            "administrador": "true",
+            "_id": "4Qb2W3p2pYTwgRMl"
+        },
+        {
+            "nome": "Tanya Fisher",
+            "email": "david86@compasso.com",
+            "password": "!vf2OjTx",
+            "administrador": "true",
+            "_id": "4XDkxZxIBmDQf9T7"
+        },
+        {
+            "nome": "Sheryl Lucas",
+            "email": "mrichardson@compasso.com",
+            "password": "qq_0HGKw",
+            "administrador": "true",
+            "_id": "5JbWmgZdcNv0l05e"
+        },
+        {
+            "nome": "Rodrigo",
+            "email": "isabella79@compasso.com",
+            "password": "senha01",
+            "administrador": "true",
+            "_id": "5YgyNG7b2xdkLsZz"
+        },
+        {
+            "nome": "Maria Rezende",
+            "email": "peixotoevelyn@example.org",
+            "password": "ioW&amp;8CCiKe",
+            "administrador": "true",
+            "_id": "6CyObR4jsSdlQKE4"
+        },
+        {
+            "nome": "Fulano pvKazgkG",
+            "email": "usuario_pvKazgkG@qa.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "6wojttVPIFGFwR2D"
+        },
+        {
+            "nome": "Omar Beahan",
+            "email": "Alvera26@yahoo.com",
+            "password": "teste",
+            "administrador": "false",
+            "_id": "7RmWvt8K6st7DuJt"
+        },
+        {
+            "nome": "Raique",
+            "email": "raique4@qa.com.br",
+            "password": "test3",
+            "administrador": "true",
+            "_id": "7jZU8y0VGsMn2qt1"
+        },
+        {
+            "nome": "Fulano lSFmohc7",
+            "email": "longpass_lSFmohc7@qa.com",
+            "password": "senha_muito_longa_1234567890",
+            "administrador": "true",
+            "_id": "8uZRwUYULkNIrZWd"
+        },
+        {
+            "nome": "Kristina Hardy",
+            "email": "tdouglas@compasso.com",
+            "password": "+5GpihF7",
+            "administrador": "false",
+            "_id": "AWqMuXzmQFWivaQm"
+        },
+        {
+            "nome": "Debra Beck",
+            "email": "cwilson@compasso.com",
+            "password": "FQ#5&amp;Sv8",
+            "administrador": "true",
+            "_id": "BBpVAgr5DT62skp5"
+        },
+        {
+            "nome": "Mr. Jeremy Vargas",
+            "email": "gsmith@example.org",
+            "password": "$E1L9Tm6b2",
+            "administrador": "true",
+            "_id": "BONOiLNkIebUugr7"
+        },
+        {
+            "nome": "Gabriel Barbosa",
+            "email": "sait@emailteste.com",
+            "password": "4321",
+            "administrador": "true",
+            "_id": "BRbpi3lLtpAHWAtg"
+        },
+        {
+            "nome": "Teresa Brown",
+            "email": "thernandez@compasso.com",
+            "password": "%(6B&amp;!vB",
+            "administrador": "false",
+            "_id": "Bl0k5SUgzuPkTlTl"
+        },
+        {
+            "nome": "Jesus Long",
+            "email": "deborahtucker@compasso.com",
+            "password": "r7_+4Eit",
+            "administrador": "false",
+            "_id": "CDfdSrVb9Tsy4QcV"
+        },
+        {
+            "nome": "Eloá Garcia",
+            "email": "snovaes@example.net",
+            "password": "ODB9BSQc)R",
+            "administrador": "true",
+            "_id": "CYfrGFS6UZ2iXZhi"
+        },
+        {
+            "nome": "Pietra Sampaio",
+            "email": "maria-julia30@example.net",
+            "password": "W4XAwpOe)1",
+            "administrador": "true",
+            "_id": "Dn9RFxFbnOkww5YH"
+        },
+        {
+            "nome": "Andrea Martinez",
+            "email": "vstanley@compasso.com",
+            "password": "H@D+X5Dt",
+            "administrador": "false",
+            "_id": "EEaYeCXbDmWpjNlT"
+        },
+        {
+            "nome": "Robert Rice",
+            "email": "bcollins@compasso.com",
+            "password": "sK#1W++y",
+            "administrador": "true",
+            "_id": "EJ8ZuZdOeAGOMMCm"
+        },
+        {
+            "nome": "Kyle Jones",
+            "email": "angela97@compasso.com",
+            "password": "G&amp;F^2*Wz",
+            "administrador": "true",
+            "_id": "EQY4AMX6QrQM0wAg"
+        },
+        {
+            "nome": "Kayla Vasquez",
+            "email": "michaelalvarado@compasso.com",
+            "password": "b%#3Aelo",
+            "administrador": "true",
+            "_id": "EQllFn69fmlim84H"
         },
         {
             "nome": "   ",
-            "email": "Alanna.Buckridge82@gmail.com",
+            "email": "Jeffry.Treutel@yahoo.com",
             "password": "senha",
             "administrador": "true",
-            "_id": "1WDtEfJTDFoyZX6f"
-        },
-        {
-            "nome": "Fulano da Silva",
-            "email": "margot@qa.com",
-            "password": "teste123",
-            "administrador": "true",
-            "_id": "1mBYf9upMQAmudo7"
-        },
-        {
-            "nome": "Veronica Tucker",
-            "email": "eric34@example.net",
-            "password": "I25594201",
-            "administrador": "true",
-            "_id": "251mfLmNhTqXKVO9"
-        },
-        {
-            "nome": "Kristy Morrow",
-            "email": "emily34@example.com",
-            "password": "12345678901",
-            "administrador": "true",
-            "_id": "25V30rekaCYllcNM"
-        },
-        {
-            "nome": "Jason Cox",
-            "email": "olewis@example.com",
-            "password": "S91656261",
-            "administrador": "true",
-            "_id": "2EJab9ieOO7l5TIb"
-        },
-        {
-            "nome": "Andres Smith",
-            "email": "garrettlarry@example.net",
-            "password": "B82948375",
-            "administrador": "true",
-            "_id": "2Iw9tIoO3Xb3zQek"
-        },
-        {
-            "nome": "David Montgomery",
-            "email": "lijessica@example.com",
-            "password": "W32484885",
-            "administrador": "true",
-            "_id": "2agAVg85nXvzVKQV"
-        },
-        {
-            "nome": "Jordan Fernandez",
-            "email": "wolfesteven@compasso.com",
-            "password": "#N*9NA%d",
-            "administrador": "true",
-            "_id": "2b01pd5qRKLz7coN"
-        },
-        {
-            "nome": "Anthony Brown",
-            "email": "jessica59@example.net",
-            "password": "X23505582",
-            "administrador": "true",
-            "_id": "2lPKrKvO3IbpWIxJ"
-        },
-        {
-            "nome": "Fulano 5SC36huY",
-            "email": "usuario_5SC36huY@qa.com",
-            "password": "teste",
-            "administrador": "true",
-            "_id": "2yp8N2E6lU8wnxSH"
-        },
-        {
-            "nome": "Fulano 9o5nxcoA",
-            "email": "usuario_9o5nxcoA@qa.com",
-            "password": "teste",
-            "administrador": "true",
-            "_id": "3ThL2d08ZmIssLPp"
+            "_id": "FRKS453ER6xvYdrN"
         },
         {
             "nome": "Rodrigo",
-            "email": "sortiz@compasso.com",
-            "password": "12345678901234567890",
+            "email": "alexander35@compasso.com",
+            "password": "1",
             "administrador": "true",
-            "_id": "3tgxYk263z8RgSoO"
+            "_id": "GOJv8MvonCQzKdqf"
         },
         {
-            "nome": "Pamela Davis",
-            "email": "rodrigocompass0224@compasso.com",
-            "password": "senha01",
+            "nome": "Gabriel Barbosa",
+            "email": "csug@emailteste.com",
+            "password": "4321",
             "administrador": "true",
-            "_id": "43dODmbEFr5oYOuh"
+            "_id": "GYbtJBUD5Rs7G3HW"
         },
         {
-            "nome": "BmDOV_Atualizado",
-            "email": "fulanoBmDOV@qa.com",
-            "password": "teste",
+            "nome": "Cassandra Smith",
+            "email": "dmaldonado@compasso.com",
+            "password": "$vS5S+lN",
             "administrador": "true",
-            "_id": "4bPe5WMagDGc4W1M"
-        },
-        {
-            "nome": "Tyler Simon",
-            "email": "jacobberry@example.com",
-            "password": "948285327",
-            "administrador": "true",
-            "_id": "4noRUUMsGiQ1FUlF"
-        },
-        {
-            "nome": "Lauren Hunter",
-            "email": "dominiquemorrison@example.net",
-            "password": "227506369",
-            "administrador": "true",
-            "_id": "557tojUWhUlQVYSV"
-        },
-        {
-            "nome": "Fulano Ja2D4FI3",
-            "email": "longpass_Ja2D4FI3@qa.com",
-            "password": "senha_muito_longa_1234567890",
-            "administrador": "true",
-            "_id": "5bAb7TLguNtyDm1G"
-        },
-        {
-            "nome": "Kristina Rios",
-            "email": "plong@compasso.com",
-            "password": "#Ae%1nPq",
-            "administrador": "true",
-            "_id": "5h44GXTS5QvkeewK"
-        },
-        {
-            "nome": "Mirella Sá",
-            "email": "uramos@example.com",
-            "password": "GYZfP7^t*1",
-            "administrador": "true",
-            "_id": "5ztmIFmh2FLVPMSv"
-        },
-        {
-            "nome": "Alexandria Torres",
-            "email": "amylee@example.com",
-            "password": "I00445759",
-            "administrador": "true",
-            "_id": "63wVhie0r3ue4YoK"
-        },
-        {
-            "nome": "Ísis Vasconcelos",
-            "email": "maria-alice98@example.org",
-            "password": "FPCf#K)q$2",
-            "administrador": "true",
-            "_id": "6914ZA7dxzaifW1c"
-        },
-        {
-            "nome": "Angela Jones",
-            "email": "imoore@compasso.com",
-            "password": "!2WnGX*t",
-            "administrador": "false",
-            "_id": "6DCwcrItwPO1qe3L"
-        },
-        {
-            "nome": "Tanya Edwards",
-            "email": "esantiago@example.org",
-            "password": "N45875391",
-            "administrador": "true",
-            "_id": "77I9cmC3KSa4yWmH"
-        },
-        {
-            "nome": "Admin Challenge User",
-            "email": "teste202506051454135800485075@automation.com",
-            "password": "admin123",
-            "administrador": "true",
-            "_id": "7LcPbmXRSqZOuLyh"
-        },
-        {
-            "nome": "Eloah da Conceição",
-            "email": "borgesluiz-henrique@example.com",
-            "password": "%v0EX^qL3Y",
-            "administrador": "true",
-            "_id": "7VnPB6KuCG0nknuJ"
-        },
-        {
-            "nome": "Tim Shannon MD",
-            "email": "angela21@example.org",
-            "password": "&amp;K+AvPUm%2",
-            "administrador": "true",
-            "_id": "7Z66f7CPzE5vLUfV"
-        },
-        {
-            "nome": "rMFpf",
-            "email": "fulanorMFpf@gmail.com",
-            "password": "teste",
-            "administrador": "true",
-            "_id": "7oDKIspUXKXs0JCk"
-        },
-        {
-            "nome": "Robert Lara",
-            "email": "amybishop@example.net",
-            "password": "H69262517",
-            "administrador": "true",
-            "_id": "85byf3JB8D8yI0xi"
+            "_id": "GgbZOCerE3zc4oNs"
         },
         {
             "nome": "Rodrigo",
-            "email": "julie91@compasso.com",
+            "email": "vpatel@compasso.com",
+            "password": "senha01",
+            "administrador": "false",
+            "_id": "GzYqlHWfgwBx68Kg"
+        },
+        {
+            "nome": "Caso de teste 7",
+            "email": "Nickolas_Crist92@hotmail.com",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "I49WJOsdYPnBhqCo"
+        },
+        {
+            "nome": "Michele Ruiz",
+            "email": "carolarellano@compasso.com",
+            "password": "#V6S1u$R",
+            "administrador": "true",
+            "_id": "Io5JEmGIzBztSPWs"
+        },
+        {
+            "nome": "Rodrigo",
+            "email": "palmerzachary@compasso.com",
             "password": "senha01",
             "administrador": "true",
-            "_id": "88r8YlP0sax8PqQz"
+            "_id": "Jw0GKhPWwiRiWESD"
         },
         {
-            "nome": "Anna Maynard",
-            "email": "susancook@compasso.com",
-            "password": "KeM_6Cd_",
+            "nome": "Isabela Ribeiro",
+            "email": "cavalcantezoe@example.org",
+            "password": "9)qS2SQsP*",
             "administrador": "true",
-            "_id": "8Y0Kkupw13kL8z49"
+            "_id": "K2FZrFRb647mIfqT"
         },
         {
-            "nome": "Userone",
-            "email": "teste202506051536046707055129@automation.com",
-            "password": "user1",
-            "administrador": "true",
-            "_id": "8x8nuyphJj03p6mK"
-        },
-        {
-            "nome": "Sara Willis",
-            "email": "daniel16@example.com",
-            "password": "467993309",
-            "administrador": "true",
-            "_id": "8yWVxyqIKSUC7w6R"
-        },
-        {
-            "nome": "Nicole Phillips",
-            "email": "toddjoshua@example.net",
-            "password": "Z45213784",
-            "administrador": "true",
-            "_id": "8zdZTyISD2AMckuy"
-        },
-        {
-            "nome": "cilicio",
-            "email": "cilicio@gmail.com",
-            "password": "cilicio123",
-            "administrador": "true",
-            "_id": "984jFd8l2htvCrMP"
-        },
-        {
-            "nome": "Caso de teste 6",
-            "email": "Paris.Hansen@yahoo.com",
-            "password": "12345678910",
-            "administrador": "true",
-            "_id": "9UgEDCzF7Fl8nScO"
-        },
-        {
-            "nome": "Leandro Melo",
-            "email": "agatha58@example.net",
-            "password": "G$0+!ETne*",
-            "administrador": "true",
-            "_id": "A1ejxycKvH4LxBAs"
-        },
-        {
-            "nome": "Thomas Anderson",
-            "email": "melissawhite@compasso.com",
-            "password": "*c2AdGNv",
+            "nome": "iKjjc",
+            "email": "fulanoiKjjc@qa.com",
+            "password": "te",
             "administrador": "false",
-            "_id": "AGzEhBmkeehkYHrs"
+            "_id": "L3AQKoLpnl0lSITV"
         },
         {
-            "nome": "Steven Harrison",
-            "email": "vweaver@example.net",
-            "password": ")UvHazvoj1",
-            "administrador": "true",
-            "_id": "AJwZFEpGzyG5zEth"
-        },
-        {
-            "nome": "Drew Murray IV",
-            "email": "Magali.Marks@yahoo.com",
+            "nome": "HnIQO",
+            "email": "fulanoHnIQO@qa.com",
             "password": "teste",
+            "administrador": "true",
+            "_id": "LA3YWFVxM3lbv4YA"
+        },
+        {
+            "nome": "James Richardson",
+            "email": "haileyreilly@compasso.com",
+            "password": "gF*9Cl5X",
             "administrador": "false",
-            "_id": "A... (set the log level to DEBUG or TRACE to see the full content) 
+            "_id": "MNrYQLGjLORuERGQ"
+        },
+        {
+            "nome": "Fulano Bv4dSQhD",
+            "email": "shortpass_Bv4dSQhD@qa.com",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "N8rD21CmW6gDGDxd"
+        },
+        {
+            "nome": "Carmen Henry",
+            "email": "jbailey@compasso.com",
+            "password": "f)8wwE_i",
+   ... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2025-06-05T17:08:34.605177" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-06-06T14:40:12.461696" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:33.899528" elapsed="0.705691"/>
+<status status="PASS" start="2025-06-06T14:40:11.604726" elapsed="0.857028"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:34.605358" elapsed="0.000095"/>
+<status status="PASS" start="2025-06-06T14:40:12.467332" elapsed="0.000510"/>
 </return>
-<msg time="2025-06-05T17:08:34.605678" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-06-06T14:40:12.468407" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
-<status status="PASS" start="2025-06-05T17:08:33.898985" elapsed="0.706733"/>
+<status status="PASS" start="2025-06-06T14:40:11.604205" elapsed="0.864257"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:34.607239" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:12.479586" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.606563" elapsed="0.000795"/>
+<status status="PASS" start="2025-06-06T14:40:12.473915" elapsed="0.005811"/>
 </kw>
 <arg>${response}</arg>
 <arg>200</arg>
-<status status="PASS" start="2025-06-05T17:08:34.606026" elapsed="0.001442"/>
+<status status="PASS" start="2025-06-06T14:40:12.472146" elapsed="0.009341"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${response.json()}</arg>
 <arg>usuarios</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.607673" elapsed="0.001405"/>
+<status status="PASS" start="2025-06-06T14:40:12.483441" elapsed="0.004274"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-05T17:08:34.611108" level="INFO">${usuarios} = [{'nome': 'Sarah Webb', 'email': 'paguilar@compasso.com', 'password': 'l(6@_NCt', 'administrador': 'false', '_id': '0DweFZec3kgjUAhd'}, {'nome': 'Caso de teste 3', 'email': 'Little@gmail.com', 'passwo...</msg>
+<msg time="2025-06-06T14:40:12.500135" level="INFO">${usuarios} = [{'nome': 'Larry Perkins', 'email': 'gerald71@compasso.com', 'password': '$*l&amp;5HIz', 'administrador': 'false', '_id': '0CpJkddm3VDEwPIu'}, {'nome': 'Kelly Harris', 'email': 'william76@compasso.com', '...</msg>
 <var>${usuarios}</var>
 <arg>${response.json()}</arg>
 <arg>usuarios</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.609293" elapsed="0.001856"/>
+<status status="PASS" start="2025-06-06T14:40:12.491034" elapsed="0.009274"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-06-05T17:08:34.611804" level="INFO">Length is 268.</msg>
-<msg time="2025-06-05T17:08:34.611917" level="INFO">${quantidade} = 268</msg>
+<msg time="2025-06-06T14:40:12.501572" level="INFO">Length is 119.</msg>
+<msg time="2025-06-06T14:40:12.501711" level="INFO">${quantidade} = 119</msg>
 <var>${quantidade}</var>
 <arg>${usuarios}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.611375" elapsed="0.000579"/>
+<status status="PASS" start="2025-06-06T14:40:12.501154" elapsed="0.000596"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${quantidade} &gt; 0</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.612196" elapsed="0.000318"/>
+<status status="PASS" start="2025-06-06T14:40:12.502047" elapsed="0.001406"/>
 </kw>
 <doc>Valida a listagem de todos os usuários</doc>
-<tag>get</tag>
-<tag>usuarios</tag>
-<status status="PASS" start="2025-06-05T17:08:33.896956" elapsed="0.715756"/>
+<tag>Buscar usuarios</tag>
+<status status="PASS" start="2025-06-06T14:40:11.600478" elapsed="0.903379"/>
 </test>
 <test id="s1-t8" name="Cadastro E Atualizacao De Usuario" line="87">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:34.615779" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:12.506189" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:34.615476" elapsed="0.000569"/>
+<status status="PASS" start="2025-06-06T14:40:12.505710" elapsed="0.001970"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:34.615036" elapsed="0.001131"/>
+<status status="PASS" start="2025-06-06T14:40:12.505071" elapsed="0.002785"/>
 </kw>
 <kw name="Gerar Email Aleatorio">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-05T17:08:34.617269" level="INFO">${nome_aleatorio} = GRCsn</msg>
+<msg time="2025-06-06T14:40:12.522167" level="INFO">${nome_aleatorio} = hUPPY</msg>
 <var>${nome_aleatorio}</var>
 <arg>5</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.616854" elapsed="0.000460"/>
+<status status="PASS" start="2025-06-06T14:40:12.515247" elapsed="0.007032"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:34.617748" level="INFO">${email} = fulanoGRCsn@qa.com</msg>
+<msg time="2025-06-06T14:40:12.528298" level="INFO">${email} = fulanohUPPY@qa.com</msg>
 <var>${email}</var>
 <arg>fulano${nome_aleatorio}@qa.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.617497" elapsed="0.000290"/>
+<status status="PASS" start="2025-06-06T14:40:12.522579" elapsed="0.005832"/>
 </kw>
 <return>
 <value>${email}</value>
 <value>${nome_aleatorio}</value>
-<status status="PASS" start="2025-06-05T17:08:34.617864" elapsed="0.000068"/>
+<status status="PASS" start="2025-06-06T14:40:12.528578" elapsed="0.000121"/>
 </return>
-<msg time="2025-06-05T17:08:34.618179" level="INFO">${email} = fulanoGRCsn@qa.com</msg>
-<msg time="2025-06-05T17:08:34.618240" level="INFO">${nome} = GRCsn</msg>
+<msg time="2025-06-06T14:40:12.532617" level="INFO">${email} = fulanohUPPY@qa.com</msg>
+<msg time="2025-06-06T14:40:12.532719" level="INFO">${nome} = hUPPY</msg>
 <var>${email}</var>
 <var>${nome}</var>
-<status status="PASS" start="2025-06-05T17:08:34.616497" elapsed="0.001780"/>
+<status status="PASS" start="2025-06-06T14:40:12.509363" elapsed="0.023399"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:34.619784" level="INFO">${body} = {'nome': 'GRCsn', 'email': 'fulanoGRCsn@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
+<msg time="2025-06-06T14:40:12.545014" level="INFO">${body} = {'nome': 'hUPPY', 'email': 'fulanohUPPY@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.619228" elapsed="0.000605"/>
+<status status="PASS" start="2025-06-06T14:40:12.538715" elapsed="0.006384"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:35.053831" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:13.246324" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '94', 'Content-Type': 'application/json'} 
- body=b'{"nome": "GRCsn", "email": "fulanoGRCsn@qa.com", "password": "teste", "administrador": "true"}' 
+ body=b'{"nome": "hUPPY", "email": "fulanohUPPY@qa.com", "password": "teste", "administrador": "true"}' 
  </msg>
-<msg time="2025-06-05T17:08:35.053986" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:13.246467" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '23c9f81b7e0958ad409f4454cbd8166f', 'date': 'Thu, 05 Jun 2025 20:08:34 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '4751eb01b3803b91f6d1a82a96607a82', 'date': 'Fri, 06 Jun 2025 17:40:13 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "Z7kAFF9S5huXRk3g"
+    "_id": "TnAUWWLOEjPtIm9e"
 } 
  </msg>
-<msg time="2025-06-05T17:08:35.054191" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:13.246692" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:34.620013" elapsed="0.434221"/>
+<status status="PASS" start="2025-06-06T14:40:12.545386" elapsed="0.701351"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:35.054404" elapsed="0.000075"/>
+<status status="PASS" start="2025-06-06T14:40:13.246860" elapsed="0.000700"/>
 </return>
-<msg time="2025-06-05T17:08:35.054690" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:13.247863" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${email}</arg>
 <arg>${senha}</arg>
 <arg>${nome}</arg>
 <arg>true</arg>
-<status status="PASS" start="2025-06-05T17:08:34.618633" elapsed="0.436099"/>
+<status status="PASS" start="2025-06-06T14:40:12.537709" elapsed="0.710220"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:35.056245" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:13.250320" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.055548" elapsed="0.000810"/>
+<status status="PASS" start="2025-06-06T14:40:13.249265" elapsed="0.001204"/>
 </kw>
 <arg>${response}</arg>
 <arg>201</arg>
-<status status="PASS" start="2025-06-05T17:08:35.055055" elapsed="0.001408"/>
+<status status="PASS" start="2025-06-06T14:40:13.248673" elapsed="0.001952"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-05T17:08:35.057318" level="INFO">${id} = Z7kAFF9S5huXRk3g</msg>
+<msg time="2025-06-06T14:40:13.251852" level="INFO">${id} = TnAUWWLOEjPtIm9e</msg>
 <var>${id}</var>
 <arg>${response.json()}</arg>
 <arg>_id</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.056671" elapsed="0.000712"/>
+<status status="PASS" start="2025-06-06T14:40:13.251079" elapsed="0.001362"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:35.058243" level="INFO">${novo_nome} = GRCsn_Atualizado</msg>
+<msg time="2025-06-06T14:40:13.253074" level="INFO">${novo_nome} = hUPPY_Atualizado</msg>
 <var>${novo_nome}</var>
 <arg>${nome}_Atualizado</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.057605" elapsed="0.000675"/>
+<status status="PASS" start="2025-06-06T14:40:13.252730" elapsed="0.000516"/>
 </kw>
 <kw name="Atualizar Usuario">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:35.059686" level="INFO">${body} = {'nome': 'GRCsn_Atualizado', 'email': 'fulanoGRCsn@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
+<msg time="2025-06-06T14:40:13.254757" level="INFO">${body} = {'nome': 'hUPPY_Atualizado', 'email': 'fulanohUPPY@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.059128" elapsed="0.000598"/>
+<status status="PASS" start="2025-06-06T14:40:13.254227" elapsed="0.000576"/>
 </kw>
 <kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:35.318644" level="INFO">PUT Request : url=https://compassuol.serverest.dev/usuarios/Z7kAFF9S5huXRk3g 
- path_url=/usuarios/Z7kAFF9S5huXRk3g 
+<msg time="2025-06-06T14:40:13.531828" level="INFO">PUT Request : url=https://compassuol.serverest.dev/usuarios/TnAUWWLOEjPtIm9e 
+ path_url=/usuarios/TnAUWWLOEjPtIm9e 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '105', 'Content-Type': 'application/json'} 
- body=b'{"nome": "GRCsn_Atualizado", "email": "fulanoGRCsn@qa.com", "password": "teste", "administrador": "true"}' 
+ body=b'{"nome": "hUPPY_Atualizado", "email": "fulanohUPPY@qa.com", "password": "teste", "administrador": "true"}' 
  </msg>
-<msg time="2025-06-05T17:08:35.318779" level="INFO">PUT Response : url=https://compassuol.serverest.dev/usuarios/Z7kAFF9S5huXRk3g 
+<msg time="2025-06-06T14:40:13.532014" level="INFO">PUT Response : url=https://compassuol.serverest.dev/usuarios/TnAUWWLOEjPtIm9e 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '8c28db7bab86326c409f4454cbd81009', 'date': 'Thu, 05 Jun 2025 20:08:35 GMT', 'server': 'Google Frontend', 'Content-Length': '50'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '837d1811e86d8be1f6d1a82a96607841', 'date': 'Fri, 06 Jun 2025 17:40:13 GMT', 'server': 'Google Frontend', 'Content-Length': '50'} 
  body={
     "message": "Registro alterado com sucesso"
 } 
  </msg>
-<msg time="2025-06-05T17:08:35.318956" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-06-06T14:40:13.532255" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios/${id}</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.059879" elapsed="0.259118"/>
+<status status="PASS" start="2025-06-06T14:40:13.257772" elapsed="0.274533"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:35.319106" elapsed="0.000069"/>
+<status status="PASS" start="2025-06-06T14:40:13.532443" elapsed="0.000080"/>
 </return>
-<msg time="2025-06-05T17:08:35.319434" level="INFO">${response_update} = &lt;Response [200]&gt;</msg>
+<msg time="2025-06-06T14:40:13.532783" level="INFO">${response_update} = &lt;Response [200]&gt;</msg>
 <var>${response_update}</var>
 <arg>${id}</arg>
 <arg>${novo_nome}</arg>
 <arg>${email}</arg>
 <arg>${senha}</arg>
 <arg>true</arg>
-<status status="PASS" start="2025-06-05T17:08:35.058583" elapsed="0.260888"/>
+<status status="PASS" start="2025-06-06T14:40:13.253572" elapsed="0.279254"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:35.320958" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:13.534944" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.320252" elapsed="0.000812"/>
+<status status="PASS" start="2025-06-06T14:40:13.534198" elapsed="0.000875"/>
 </kw>
 <arg>${response_update}</arg>
 <arg>200</arg>
-<status status="PASS" start="2025-06-05T17:08:35.319788" elapsed="0.001361"/>
+<status status="PASS" start="2025-06-06T14:40:13.533536" elapsed="0.001636"/>
 </kw>
 <kw name="Validar Mensagem De Sucesso No Update">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:35.627729" level="INFO">GET Request : url=https://compassuol.serverest.dev/usuarios/Z7kAFF9S5huXRk3g 
- path_url=/usuarios/Z7kAFF9S5huXRk3g 
+<msg time="2025-06-06T14:40:13.866434" level="INFO">GET Request : url=https://compassuol.serverest.dev/usuarios/TnAUWWLOEjPtIm9e 
+ path_url=/usuarios/TnAUWWLOEjPtIm9e 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-06-05T17:08:35.627892" level="INFO">GET Response : url=https://compassuol.serverest.dev/usuarios/Z7kAFF9S5huXRk3g 
+<msg time="2025-06-06T14:40:13.866590" level="INFO">GET Response : url=https://compassuol.serverest.dev/usuarios/TnAUWWLOEjPtIm9e 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '6b7f95de76502d93409f4454cbd81670', 'date': 'Thu, 05 Jun 2025 20:08:35 GMT', 'server': 'Google Frontend', 'Content-Length': '154'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '940de748899b6423f6d1a82a96607ac3', 'date': 'Fri, 06 Jun 2025 17:40:13 GMT', 'server': 'Google Frontend', 'Content-Length': '154'} 
  body={
-    "nome": "GRCsn_Atualizado",
-    "email": "fulanoGRCsn@qa.com",
+    "nome": "hUPPY_Atualizado",
+    "email": "fulanohUPPY@qa.com",
     "password": "teste",
     "administrador": "true",
-    "_id": "Z7kAFF9S5huXRk3g"
+    "_id": "TnAUWWLOEjPtIm9e"
 } 
  </msg>
-<msg time="2025-06-05T17:08:35.628103" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-06-06T14:40:13.866802" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios/${id_usuario}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.321859" elapsed="0.306286"/>
+<status status="PASS" start="2025-06-06T14:40:13.535982" elapsed="0.330879"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:35.629727" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:13.868878" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.628971" elapsed="0.000843"/>
+<status status="PASS" start="2025-06-06T14:40:13.868179" elapsed="0.000834"/>
 </kw>
 <arg>${response}</arg>
 <arg>200</arg>
-<status status="PASS" start="2025-06-05T17:08:35.628481" elapsed="0.001424"/>
+<status status="PASS" start="2025-06-06T14:40:13.867232" elapsed="0.001903"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:35.630697" level="INFO">${json} = {'nome': 'GRCsn_Atualizado', 'email': 'fulanoGRCsn@qa.com', 'password': 'teste', 'administrador': 'true', '_id': 'Z7kAFF9S5huXRk3g'}</msg>
+<msg time="2025-06-06T14:40:13.870025" level="INFO">${json} = {'nome': 'hUPPY_Atualizado', 'email': 'fulanohUPPY@qa.com', 'password': 'teste', 'administrador': 'true', '_id': 'TnAUWWLOEjPtIm9e'}</msg>
 <var>${json}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.630044" elapsed="0.000690"/>
+<status status="PASS" start="2025-06-06T14:40:13.869295" elapsed="0.000769"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${json}</arg>
 <arg>nome</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.630866" elapsed="0.000192"/>
+<status status="PASS" start="2025-06-06T14:40:13.870265" elapsed="0.000276"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-05T17:08:35.631461" level="INFO">${nome_atual} = GRCsn_Atualizado</msg>
+<msg time="2025-06-06T14:40:13.871091" level="INFO">${nome_atual} = hUPPY_Atualizado</msg>
 <var>${nome_atual}</var>
 <arg>${json}</arg>
 <arg>nome</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.631195" elapsed="0.000303"/>
+<status status="PASS" start="2025-06-06T14:40:13.870725" elapsed="0.000421"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${nome_atual}</arg>
 <arg>${nome_esperado}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.631635" elapsed="0.000241"/>
+<status status="PASS" start="2025-06-06T14:40:13.871330" elapsed="0.000409"/>
 </kw>
 <arg>${id}</arg>
 <arg>${novo_nome}</arg>
-<status status="PASS" start="2025-06-05T17:08:35.321422" elapsed="0.310538"/>
+<status status="PASS" start="2025-06-06T14:40:13.535500" elapsed="0.336327"/>
 </kw>
 <doc>Valida o fluxo de cadastro e atualização de um usuário</doc>
-<tag>atualizacao</tag>
-<tag>cadastro</tag>
-<status status="PASS" start="2025-06-05T17:08:34.613064" elapsed="1.019200"/>
+<tag>cadastro atualizacao</tag>
+<status status="PASS" start="2025-06-06T14:40:12.504230" elapsed="1.367935"/>
 </test>
 <test id="s1-t9" name="Cadastro E Exclusao De Usuario" line="100">
 <kw name="Criar Sessao">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:35.633764" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-06-06T14:40:13.873645" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>serverest</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-06-05T17:08:35.633508" elapsed="0.000491"/>
+<status status="PASS" start="2025-06-06T14:40:13.873405" elapsed="0.000513"/>
 </kw>
-<status status="PASS" start="2025-06-05T17:08:35.633167" elapsed="0.000922"/>
+<status status="PASS" start="2025-06-06T14:40:13.873100" elapsed="0.000941"/>
 </kw>
 <kw name="Gerar Email Aleatorio">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-05T17:08:35.634938" level="INFO">${nome_aleatorio} = xjtoP</msg>
+<msg time="2025-06-06T14:40:13.875027" level="INFO">${nome_aleatorio} = bLViv</msg>
 <var>${nome_aleatorio}</var>
 <arg>5</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.634668" elapsed="0.000309"/>
+<status status="PASS" start="2025-06-06T14:40:13.874617" elapsed="0.000487"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-05T17:08:35.635469" level="INFO">${email} = fulanoxjtoP@qa.com</msg>
+<msg time="2025-06-06T14:40:13.875668" level="INFO">${email} = fulanobLViv@qa.com</msg>
 <var>${email}</var>
 <arg>fulano${nome_aleatorio}@qa.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.635234" elapsed="0.000272"/>
+<status status="PASS" start="2025-06-06T14:40:13.875424" elapsed="0.000281"/>
 </kw>
 <return>
 <value>${email}</value>
 <value>${nome_aleatorio}</value>
-<status status="PASS" start="2025-06-05T17:08:35.635578" elapsed="0.000063"/>
+<status status="PASS" start="2025-06-06T14:40:13.875783" elapsed="0.000124"/>
 </return>
-<msg time="2025-06-05T17:08:35.635886" level="INFO">${email} = fulanoxjtoP@qa.com</msg>
-<msg time="2025-06-05T17:08:35.635943" level="INFO">${nome} = xjtoP</msg>
+<msg time="2025-06-06T14:40:13.876228" level="INFO">${email} = fulanobLViv@qa.com</msg>
+<msg time="2025-06-06T14:40:13.876290" level="INFO">${nome} = bLViv</msg>
 <var>${email}</var>
 <var>${nome}</var>
-<status status="PASS" start="2025-06-05T17:08:35.634355" elapsed="0.001622"/>
+<status status="PASS" start="2025-06-06T14:40:13.874300" elapsed="0.002027"/>
 </kw>
 <kw name="Cadastrar">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-05T17:08:35.637319" level="INFO">${body} = {'nome': 'xjtoP', 'email': 'fulanoxjtoP@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
+<msg time="2025-06-06T14:40:13.878432" level="INFO">${body} = {'nome': 'bLViv', 'email': 'fulanobLViv@qa.com', 'password': 'teste', 'administrador': 'true'}</msg>
 <var>${body}</var>
 <arg>nome=${nome}</arg>
 <arg>email=${email}</arg>
 <arg>password=${senha}</arg>
 <arg>administrador=${admin}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.636783" elapsed="0.000585"/>
+<status status="PASS" start="2025-06-06T14:40:13.877460" elapsed="0.001081"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:36.240567" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:14.576215" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '94', 'Content-Type': 'application/json'} 
- body=b'{"nome": "xjtoP", "email": "fulanoxjtoP@qa.com", "password": "teste", "administrador": "true"}' 
+ body=b'{"nome": "bLViv", "email": "fulanobLViv@qa.com", "password": "teste", "administrador": "true"}' 
  </msg>
-<msg time="2025-06-05T17:08:36.240706" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+<msg time="2025-06-06T14:40:14.576395" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
  status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '3d27495f24b3f9cba08f9e6b5a87651d', 'date': 'Thu, 05 Jun 2025 20:08:36 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'f3f5148d5b659f7c30faad5c4bc62b6e', 'date': 'Fri, 06 Jun 2025 17:40:14 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "5bb7PeHsx1zLynCP"
+    "_id": "7yi2M0rZVmu66OoO"
 } 
  </msg>
-<msg time="2025-06-05T17:08:36.240907" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:14.580410" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:35.637521" elapsed="0.603429"/>
+<status status="PASS" start="2025-06-06T14:40:13.878838" elapsed="0.701703"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:36.241064" elapsed="0.000073"/>
+<status status="PASS" start="2025-06-06T14:40:14.580709" elapsed="0.000105"/>
 </return>
-<msg time="2025-06-05T17:08:36.245020" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-06-06T14:40:14.583262" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${email}</arg>
 <arg>${senha}</arg>
 <arg>${nome}</arg>
 <arg>true</arg>
-<status status="PASS" start="2025-06-05T17:08:35.636247" elapsed="0.608892"/>
+<status status="PASS" start="2025-06-06T14:40:13.876719" elapsed="0.706625"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:36.247978" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:14.588693" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:36.247238" elapsed="0.000846"/>
+<status status="PASS" start="2025-06-06T14:40:14.587638" elapsed="0.001212"/>
 </kw>
 <arg>${response}</arg>
 <arg>201</arg>
-<status status="PASS" start="2025-06-05T17:08:36.246674" elapsed="0.001514"/>
+<status status="PASS" start="2025-06-06T14:40:14.583812" elapsed="0.009045"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-05T17:08:36.253894" level="INFO">${id} = 5bb7PeHsx1zLynCP</msg>
+<msg time="2025-06-06T14:40:14.602536" level="INFO">${id} = 7yi2M0rZVmu66OoO</msg>
 <var>${id}</var>
 <arg>${response.json()}</arg>
 <arg>_id</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-05T17:08:36.252910" elapsed="0.001226"/>
+<status status="PASS" start="2025-06-06T14:40:14.595738" elapsed="0.006887"/>
 </kw>
 <kw name="Deletar Usuario">
 <kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:36.547079" level="INFO">DELETE Request : url=https://compassuol.serverest.dev/usuarios/5bb7PeHsx1zLynCP 
- path_url=/usuarios/5bb7PeHsx1zLynCP 
+<msg time="2025-06-06T14:40:14.885279" level="INFO">DELETE Request : url=https://compassuol.serverest.dev/usuarios/7yi2M0rZVmu66OoO 
+ path_url=/usuarios/7yi2M0rZVmu66OoO 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2025-06-05T17:08:36.547276" level="INFO">DELETE Response : url=https://compassuol.serverest.dev/usuarios/5bb7PeHsx1zLynCP 
+<msg time="2025-06-06T14:40:14.885469" level="INFO">DELETE Response : url=https://compassuol.serverest.dev/usuarios/7yi2M0rZVmu66OoO 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'f000791831dfcb46a08f9e6b5a876040', 'date': 'Thu, 05 Jun 2025 20:08:36 GMT', 'server': 'Google Frontend', 'Content-Length': '51'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '4e5e2d75a0cfe9f530faad5c4bc62606', 'date': 'Fri, 06 Jun 2025 17:40:14 GMT', 'server': 'Google Frontend', 'Content-Length': '51'} 
  body={
     "message": "Registro excluído com sucesso"
 } 
  </msg>
-<msg time="2025-06-05T17:08:36.547681" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-06-06T14:40:14.885758" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios/${id_usuario}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:36.256441" elapsed="0.291285"/>
+<status status="PASS" start="2025-06-06T14:40:14.607022" elapsed="0.278804"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-06-05T17:08:36.547860" elapsed="0.000074"/>
+<status status="PASS" start="2025-06-06T14:40:14.893513" elapsed="0.000162"/>
 </return>
-<msg time="2025-06-05T17:08:36.548138" level="INFO">${response_delete} = &lt;Response [200]&gt;</msg>
+<msg time="2025-06-06T14:40:14.896967" level="INFO">${response_delete} = &lt;Response [200]&gt;</msg>
 <var>${response_delete}</var>
 <arg>${id}</arg>
-<status status="PASS" start="2025-06-05T17:08:36.255140" elapsed="0.293035"/>
+<status status="PASS" start="2025-06-06T14:40:14.604288" elapsed="0.292788"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:36.550643" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:14.903816" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:36.549812" elapsed="0.000941"/>
+<status status="PASS" start="2025-06-06T14:40:14.901766" elapsed="0.002249"/>
 </kw>
 <arg>${response_delete}</arg>
 <arg>200</arg>
-<status status="PASS" start="2025-06-05T17:08:36.548493" elapsed="0.002366"/>
+<status status="PASS" start="2025-06-06T14:40:14.898051" elapsed="0.006154"/>
 </kw>
 <kw name="Validar Usuario Foi Excluido">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-06-05T17:08:36.753805" level="INFO">GET Request : url=https://compassuol.serverest.dev/usuarios/5bb7PeHsx1zLynCP 
- path_url=/usuarios/5bb7PeHsx1zLynCP 
+<msg time="2025-06-06T14:40:15.191224" level="INFO">GET Request : url=https://compassuol.serverest.dev/usuarios/7yi2M0rZVmu66OoO 
+ path_url=/usuarios/7yi2M0rZVmu66OoO 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-06-05T17:08:36.754058" level="INFO">GET Response : url=https://compassuol.serverest.dev/usuarios/5bb7PeHsx1zLynCP 
+<msg time="2025-06-06T14:40:15.191403" level="INFO">GET Response : url=https://compassuol.serverest.dev/usuarios/7yi2M0rZVmu66OoO 
  status=400, reason=Bad Request 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'f91e8ea76c6de4a3a08f9e6b5a876566', 'date': 'Thu, 05 Jun 2025 20:08:36 GMT', 'server': 'Google Frontend', 'Content-Length': '45'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '80cc0373afd8c2b730faad5c4bc62744', 'date': 'Fri, 06 Jun 2025 17:40:15 GMT', 'server': 'Google Frontend', 'Content-Length': '45'} 
  body={
     "message": "Usuário não encontrado"
 } 
  </msg>
-<msg time="2025-06-05T17:08:36.754269" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2025-06-06T14:40:15.191659" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>serverest</arg>
 <arg>/usuarios/${id_usuario}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-06-05T17:08:36.551631" elapsed="0.202681"/>
+<status status="PASS" start="2025-06-06T14:40:14.907779" elapsed="0.283942"/>
 </kw>
 <kw name="Validar Status Code">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-05T17:08:36.755952" level="INFO">Argument types are:
+<msg time="2025-06-06T14:40:15.199818" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${esperado}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-05T17:08:36.755254" elapsed="0.000785"/>
+<status status="PASS" start="2025-06-06T14:40:15.192934" elapsed="0.007171"/>
 </kw>
 <arg>${response}</arg>
 <arg>400</arg>
-<status status="PASS" start="2025-06-05T17:08:36.754747" elapsed="0.001383"/>
+<status status="PASS" start="2025-06-06T14:40:15.192220" elapsed="0.008091"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-05T17:08:36.756921" level="INFO">${message} = Usuário não encontrado</msg>
+<msg time="2025-06-06T14:40:15.201825" level="INFO">${message} = Usuário não encontrado</msg>
 <var>${message}</var>
 <arg>${response.json()}</arg>
 <arg>message</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-05T17:08:36.756266" elapsed="0.000692"/>
+<status status="PASS" start="2025-06-06T14:40:15.200618" elapsed="0.004177"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${message}</arg>
 <arg>Usuário não encontrado</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-06-05T17:08:36.757101" elapsed="0.000210"/>
+<status status="PASS" start="2025-06-06T14:40:15.205817" elapsed="0.000563"/>
 </kw>
 <arg>${id}</arg>
-<status status="PASS" start="2025-06-05T17:08:36.551184" elapsed="0.206259"/>
+<status status="PASS" start="2025-06-06T14:40:14.906765" elapsed="0.299790"/>
 </kw>
 <doc>Valida o fluxo de cadastro e exclusão de um usuário</doc>
-<tag>cadastro</tag>
-<tag>exclusao</tag>
-<status status="PASS" start="2025-06-05T17:08:35.632603" elapsed="1.125068"/>
+<tag>cadastro e exclusao</tag>
+<status status="PASS" start="2025-06-06T14:40:13.872507" elapsed="1.337326"/>
 </test>
-<doc>Testes da API ServeRest - Cadastro, Consulta, Atualização e Exclusão de Usuários</doc>
-<status status="FAIL" start="2025-06-05T17:08:30.061812" elapsed="6.696502"/>
+<doc>Testes da API ServeRest na funcionalidade usuario - Cadastro, Consulta, Atualização e Exclusão de Usuários</doc>
+<status status="FAIL" start="2025-06-06T14:40:06.575654" elapsed="8.637816"/>
 </suite>
 <statistics>
 <total>
 <stat pass="5" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">atualizacao</stat>
-<stat pass="3" fail="0" skip="0">cadastro</stat>
-<stat pass="0" fail="1" skip="0">curta</stat>
-<stat pass="1" fail="0" skip="0">duplicado</stat>
-<stat pass="0" fail="2" skip="0">email</stat>
-<stat pass="1" fail="0" skip="0">exclusao</stat>
-<stat pass="1" fail="0" skip="0">get</stat>
-<stat pass="0" fail="1" skip="0">gmail</stat>
-<stat pass="0" fail="1" skip="0">hotmail</stat>
-<stat pass="0" fail="1" skip="0">longa</stat>
-<stat pass="1" fail="2" skip="0">negativo</stat>
-<stat pass="1" fail="2" skip="0">positivo</stat>
-<stat pass="0" fail="2" skip="0">senha</stat>
-<stat pass="1" fail="0" skip="0">usuarios</stat>
+<stat pass="1" fail="0" skip="0">Buscar usuarios</stat>
+<stat pass="1" fail="0" skip="0">cadastro atualizacao</stat>
+<stat pass="1" fail="0" skip="0">cadastro com email ja cadastrado</stat>
+<stat pass="0" fail="1" skip="0">cadastro com gmail</stat>
+<stat pass="0" fail="1" skip="0">cadastro com hotmail</stat>
+<stat pass="0" fail="1" skip="0">cadastro com senha curta</stat>
+<stat pass="0" fail="1" skip="0">cadastro com senha longa</stat>
+<stat pass="1" fail="0" skip="0">cadastro e exclusao</stat>
+<stat pass="1" fail="0" skip="0">cadastro valido</stat>
 </tag>
 <suite>
 <stat name="Usuario" id="s1" pass="5" fail="4" skip="0">Usuario</stat>

@@ -15,7 +15,7 @@ ${QUANTIDADE}         10
 *** Test Cases ***
 Login E Cadastro De Produto
     [Documentation]    Faz login com um usuário e cadastra um produto autenticado
-    [Tags]    positivo    produto
+    [Tags]    Autenticação e cadastrar produto
     Criar Sessao
     ${random_string}=    Generate Random String    5    [LETTERS]
     ${produto_nome}=     Set Variable    Produto Teste ${random_string}
@@ -24,6 +24,12 @@ Login E Cadastro De Produto
     Validar Status Code        ${response}    201
     Validar Se Contém Chave    ${response}    _id
     Validar Se Contém Chave    ${response}    message
+
+#buscar produto
+
+# atualizar produto
+
+#deletar produto
 
 *** Keywords ***
 Criar Sessao

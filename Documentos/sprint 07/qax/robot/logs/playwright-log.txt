@@ -1,0 +1,89 @@
+{"level":30,"time":"2025-06-12T00:11:56.274Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Listening on 127.0.0.1:60947"}
+(node:112903) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-06-12T00:11:56.335Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-06-12T00:11:57.992Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Adding browser to stack: chromium, version: 136.0.7103.25"}
+{"level":30,"time":"2025-06-12T00:11:58.005Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-06-12T00:11:58.005Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-06-12T00:11:58.052Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-06-12T00:11:58.053Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-06-12T00:11:58.144Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changed active context"}
+{"level":30,"time":"2025-06-12T00:12:00.056Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Video path: undefined"}
+{"level":30,"time":"2025-06-12T00:12:00.062Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changed active page"}
+{"level":30,"time":"2025-06-12T00:12:01.195Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method newPage"}
+{"level":30,"time":"2025-06-12T00:12:01.522Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-06-12T00:12:01.729Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method goTo"}
+{"level":30,"time":"2025-06-12T00:12:01.784Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-06-12T00:12:01.789Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Strict mode is enabled, find Locator with css=h1 in page."}
+{"level":30,"time":"2025-06-12T00:12:01.913Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-06-12T00:12:01.927Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getText"}
+{"level":30,"time":"2025-06-12T00:12:01.927Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Strict mode is enabled, find Locator with css=h1 in page."}
+{"level":30,"time":"2025-06-12T00:12:02.008Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Retrieved text for element css=h1 containing Faça seu cadastro"}
+{"level":30,"time":"2025-06-12T00:12:02.008Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getText"}
+{"level":30,"time":"2025-06-12T00:12:02.019Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-06-12T00:12:02.020Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Strict mode is enabled, find Locator with id=name in page."}
+{"level":30,"time":"2025-06-12T00:12:02.117Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method fillText"}
+{"level":30,"time":"2025-06-12T00:12:02.125Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-06-12T00:12:02.125Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Strict mode is enabled, find Locator with id=email in page."}
+{"level":30,"time":"2025-06-12T00:12:02.229Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method fillText"}
+{"level":30,"time":"2025-06-12T00:12:02.267Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-06-12T00:12:02.269Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Strict mode is enabled, find Locator with id=password in page."}
+{"level":30,"time":"2025-06-12T00:12:02.323Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method fillText"}
+{"level":30,"time":"2025-06-12T00:12:02.336Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method click"}
+{"level":30,"time":"2025-06-12T00:12:02.337Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Strict mode is enabled, find Locator with id=buttonSignup in page."}
+{"level":30,"time":"2025-06-12T00:12:02.469Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method click"}
+{"level":30,"time":"2025-06-12T00:12:02.479Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-06-12T00:12:02.481Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Strict mode is enabled, find Locator with css=.notice p in page."}
+{"level":30,"time":"2025-06-12T00:12:03.910Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-06-12T00:12:03.916Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getText"}
+{"level":30,"time":"2025-06-12T00:12:03.917Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Strict mode is enabled, find Locator with css=.notice p in page."}
+{"level":30,"time":"2025-06-12T00:12:03.971Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Retrieved text for element css=.notice p containing Boas vindas ao Mark85, o seu gerenciador de tarefas."}
+{"level":30,"time":"2025-06-12T00:12:03.971Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getText"}
+{"level":30,"time":"2025-06-12T00:12:07.983Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-06-12T00:12:07.984Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","Take screenshot with options: ":{"path":"/home/izadora/Área de trabalho/qax/robot/logs/browser/screenshot/robotframework-browser-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-06-12T00:12:08.304Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-06-12T00:12:08.321Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.333Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.344Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.350Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.357Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.359Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.366Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.371Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.375Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changed active context"}
+{"level":30,"time":"2025-06-12T00:12:08.376Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changing current active page: page=67600da2-0674-433b-94b9-0f76733c08fd"}
+{"level":30,"time":"2025-06-12T00:12:08.376Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changed active page"}
+{"level":30,"time":"2025-06-12T00:12:08.381Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method closeContext"}
+{"level":30,"time":"2025-06-12T00:12:08.405Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Removed page=1023f7eb-1328-45c4-ac13-ff381e6a8e93 from context=829578c0-d112-4f61-a8a3-75cd20dfdaea page stack"}
+{"level":30,"time":"2025-06-12T00:12:08.469Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method closeContext"}
+{"level":30,"time":"2025-06-12T00:12:08.500Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.500Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:08.524Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2025-06-12T00:12:08.525Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2025-06-12T00:12:08.540Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-06-12T00:12:08.541Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-06-12T00:12:08.561Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changed active context"}
+{"level":30,"time":"2025-06-12T00:12:09.075Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Video path: undefined"}
+{"level":30,"time":"2025-06-12T00:12:09.076Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changed active page"}
+{"level":30,"time":"2025-06-12T00:12:10.067Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method newPage"}
+{"level":30,"time":"2025-06-12T00:12:10.236Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-06-12T00:12:10.236Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","Take screenshot with options: ":{"path":"/home/izadora/Área de trabalho/qax/robot/logs/browser/screenshot/robotframework-browser-screenshot-2.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-06-12T00:12:10.713Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-06-12T00:12:10.736Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.744Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.757Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.770Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.774Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.776Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.783Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.787Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.791Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changed active context"}
+{"level":30,"time":"2025-06-12T00:12:10.791Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changing current active page: page=c8c34a9a-30e2-42eb-9992-16b00cdc9a80"}
+{"level":30,"time":"2025-06-12T00:12:10.791Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Changed active page"}
+{"level":30,"time":"2025-06-12T00:12:10.796Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method closeContext"}
+{"level":30,"time":"2025-06-12T00:12:10.812Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Removed page=6e598449-7007-4a35-b966-cfea5fef5bab from context=540887c1-d852-441b-a8d4-420e316252c2 page stack"}
+{"level":30,"time":"2025-06-12T00:12:10.932Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method closeContext"}
+{"level":30,"time":"2025-06-12T00:12:10.970Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:10.971Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-12T00:12:11.076Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-06-12T00:12:11.539Z","pid":112903,"hostname":"izadora-IdeaPad-3-15IGL05","msg":"End of node method closeAllBrowsers"}

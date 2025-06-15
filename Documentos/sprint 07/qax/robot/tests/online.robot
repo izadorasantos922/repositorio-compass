@@ -1,12 +1,10 @@
 *** Settings ***
-Documentation    online
-Library    Browser
+Documentation    Online
 
 Resource    ../resources/base.resource
 
-
 *** Test Cases ***
-Web app deve estar online
-    Start Session
-    ${title}=    Get Title
-    Should Be Equal    ${title}    Mark85 by QAx
+Webapp deve estar Online
+
+    Start Session   
+    Get Title      equal    Mark85 by QAx   

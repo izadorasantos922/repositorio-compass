@@ -1,31 +1,38 @@
 *** Settings ***
-Documentation    Cenários de autenticação do usuários
+Documentation    Cenários de autenticação do usuário
+
+Library     Collections
 Resource    ../resources/base.resource
-Library    Collections
-Test Setup    Start Session
-Test Teardown    Take Screenshot
+Resource    ../resources/pages/LoginPage.resource
+
+Test Setup        Start Session
+Test Teardown     Take Screenshot
 
 *** Test Cases ***
-Deve poder logar com o usuário pré-cadastrado
-    ${user}    Create Dictionary
-    ...    name=Iza
-    ...    email=izda@gmail.com
-    ...    password=izaiza
+Deve poder logar com um usuário pré-cadastrado
 
+    ${user}    Create Dictionary
+    ...        name=Izadora
+    ...        email=izadora@gmail.com
+    ...        password=123456
+    
     Remove user from database    ${user}[email]
     Insert user from database    ${user}
-    Submit login form    ${user}
+    
+    Submit login form           ${user}   
     User should be logged in    ${user}[name]
 
 Não deve logar com senha inválida
-        ${user}    Create Dictionary
-    ...    name=Steve
-    ...    email=stev@gmail.com
-    ...    password=123456
 
+    ${user}    Create Dictionary
+    ...        name=Steve
+    ...        email=job@apple.com
+    ...        password=123456
+    
     Remove user from database    ${user}[email]
     Insert user from database    ${user}
-    Set To Dictionary    ${user}    passsword=abc123
-    User should be logged in    ${user}[name]
-    Submit login form    ${user}
-    Notice should be    Ocorreu um erro ao fazer login, verifique suas credenciais
+
+    Set To Dictionary    ${user}    password=abc123
+    
+    Submit login form    ${user}   
+    Notice should be     Ocorreu um erro ao fazer login, verifique suas credenciais.

@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.3 (Python 3.12.3 on linux)" name="Generator">
+<meta content="Robot Framework 7.0 (Python 3.12.3 on linux)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1068,48 +1068,58 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0)
+        if (total == 0) {
             return [0.0, 0.0, 0.0];
+        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1;
+            pass = 0.1
         if (fail > 0 && fail < 0.1)
-            fail = 0.1;
+            fail = 0.1
         if (skip > 0 && skip < 0.1)
-            skip = 0.1;
+            skip = 0.1
         if (pass > 99.95 && pass < 100)
-            pass = 99.9;
+            pass = 99.9
         if (fail > 99.95 && fail < 100)
-            fail = 99.9;
+            fail = 99.9
         if (skip > 99.95 && skip < 100)
-            skip = 99.9;
-        return [round1(pass), round1(skip), round1(fail)];
+            skip = 99.9
+        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1.0;
+            num1 = 1
         if (num2 > 0 && num2 < 1)
-            num2 = 1.0;
+            num2 = 1
         if (num3 > 0 && num3 < 1)
-            num3 = 1.0;
+            num3 = 1
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 >= num2 && num1 >= num3)
-                num1 = round1(num1 - 0.1);
-            else if (num2 >= num1 && num2 >= num3)
-                num2 = round1(num2 - 0.1);
-            else
-                num3 = round1(num3 - 0.1);
+            if (num1 > num2 && num1 > num3)
+                num1 -= 0.1;
+            else if (num2 > num1 && num2 > num3)
+                num2 -= 0.1;
+            else if (num3 > num1 && num3 > num2)
+                num3 -= 0.1;
+            else if (num1 > num3 && num1 == num2) {
+                num1 -= 0.1;
+                num2 -= 0.1;
+            }
+            else if (num1 > num2 && num1 == num3) {
+                num1 -= 0.1;
+                num3 -= 0.1;
+            }
+            else if (num2 > num1 && num2 == num3) {
+                num2 -= 0.1;
+                num3 -= 0.1;
+            }
         }
-        return [num1, num2, num3];
-    }
-    function round1(num) {
-        return Math.round(num*10) / 10;
+        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
     }
     return {
         Statistics: Statistics
@@ -1328,7 +1338,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1887,22 +1897,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,4,[],[0,0,16778],[],[[5,0,0,[6],[1,766,13378],[]],[7,0,0,[8],[0,14317,2237,9],[]]],[],[2,1,1,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,53110],[[4,5,6,7,[],[1,52,8784],[],[[8,0,0,[],[1,1887,3602],[]],[9,0,0,[],[1,5683,2973],[]]],[],[2,2,0,0]],[10,11,12,13,[],[1,8873,2181],[],[[14,0,0,[],[1,8942,1810],[]]],[],[1,1,0,0]],[15,16,17,18,[],[0,11131,20394],[],[[19,0,0,[],[1,11236,2966],[]],[20,0,0,[21],[1,14422,2946],[]],[22,0,0,[23],[1,17851,2597],[]],[24,0,0,[25],[1,20695,2623],[]],[26,0,0,[27],[0,23550,7751,28],[]]],[],[5,4,1,0]],[29,30,31,0,[],[0,31572,21535],[[32,33,34,35,[],[0,31575,15192],[],[[36,0,0,[],[0,31615,1757,37],[]],[38,0,0,[39],[1,33575,3132],[]],[40,0,0,[41],[1,36980,9535],[]]],[],[3,2,1,0]],[42,43,44,45,[],[1,46811,3068],[],[[46,0,0,[],[1,46883,2815],[]]],[],[1,1,0,0]],[47,48,49,50,[],[1,49919,3140],[],[[51,0,0,[],[1,49959,2880],[]]],[],[1,1,0,0]]],[],[],[5,4,1,0]]],[],[],[13,11,2,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Signup","*/home/izadora/Área de trabalho/qax/robot/tests/signup.robot","*../tests/signup.robot","*<p>Cenários de testes do cadastro de usuários\x3c/p>","*Deve poder cadastrar novos usuários","*cadastro","*Não deve permitir o cadastrar com email duplicado","*email duplicado","*NameError: name 'user' is not defined"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Tests","*/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 07/qax/robot/tests","*../tests","*Login","*/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 07/qax/robot/tests/login.robot","*../tests/login.robot","*<p>Cenários de autenticação do usuário\x3c/p>","*Deve poder logar com um usuário pré-cadastrado","*Não deve logar com senha inválida","*Online","*/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 07/qax/robot/tests/online.robot","*../tests/online.robot","*<p>Online\x3c/p>","*Webapp deve estar Online","*Signup","*/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 07/qax/robot/tests/signup.robot","*../tests/signup.robot","*<p>Cenários de testes do cadastro de usuários\x3c/p>","*Deve poder cadastrar um novo usuário","*Não deve permitir o cadastro com email duplicado","*dup","*Campos obrigatórios","*required","*Não deve cadastrar com email incorreto","*inv_email","*Não deve cadastrar com senha muito curta","*Temp","*TimeoutError: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n  [2m- waiting for locator('.alert-error').locator('text=Informe uma senha com pelo menos 6 digitos') to be visible[22m\n\nTip: Use \"Set Browser Timeout\" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.","*Tasks","*/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 07/qax/robot/tests/tasks","*../tests/tasks","*Create","*/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 07/qax/robot/tests/tasks/create.robot","*../tests/tasks/create.robot","*<p>Cenários de cadastro de tarefas\x3c/p>","*Deve poder cadastrar uma nova tarefa","*No keyword with name 'Insert user into database' found. Did you mean:\n    database.Insert user from database","*Não deve cadastrar tarefa com nome duplicado","*duplicate","*Não deve cadastrar uma nova tarefa quando atinge o limite de tags","*tags_limit","*Delete","*/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 07/qax/robot/tests/tasks/delete.robot","*../tests/tasks/delete.robot","*<p>Cenários de testes de remoção de tarefas\x3c/p>","*Deve poder apagar uma tarefa indesejada","*Update","*/home/izadora/Área de trabalho/documentos compass/Documentos/sprint 07/qax/robot/tests/tasks/update.robot","*../tests/tasks/update.robot","*<p>Cenários de testes de atualização de tarefas\x3c/p>","*Deve poder marcar uma tarefa com concluída"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:16","fail":1,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:13","fail":0,"label":"cadastro","pass":1,"skip":0},{"elapsed":"00:00:02","fail":1,"label":"email duplicado","pass":0,"skip":0}],[{"elapsed":"00:00:17","fail":1,"id":"s1","label":"Signup","name":"Signup","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:47","fail":2,"label":"All Tests","pass":11,"skip":0}],[{"elapsed":"00:00:03","fail":0,"label":"dup","pass":1,"skip":0},{"elapsed":"00:00:03","fail":0,"label":"duplicate","pass":1,"skip":0},{"elapsed":"00:00:03","fail":0,"label":"inv_email","pass":1,"skip":0},{"elapsed":"00:00:03","fail":0,"label":"required","pass":1,"skip":0},{"elapsed":"00:00:10","fail":0,"label":"tags_limit","pass":1,"skip":0},{"elapsed":"00:00:08","fail":1,"label":"Temp","pass":0,"skip":0}],[{"elapsed":"00:00:53","fail":2,"id":"s1","label":"Tests","name":"Tests","pass":11,"skip":0},{"elapsed":"00:00:09","fail":0,"id":"s1-s1","label":"Tests.Login","name":"Login","pass":2,"skip":0},{"elapsed":"00:00:02","fail":0,"id":"s1-s2","label":"Tests.Online","name":"Online","pass":1,"skip":0},{"elapsed":"00:00:20","fail":1,"id":"s1-s3","label":"Tests.Signup","name":"Signup","pass":4,"skip":0},{"elapsed":"00:00:22","fail":1,"id":"s1-s4","label":"Tests.Tasks","name":"Tasks","pass":4,"skip":0},{"elapsed":"00:00:15","fail":1,"id":"s1-s4-s1","label":"Tests.Tasks.Create","name":"Create","pass":2,"skip":0},{"elapsed":"00:00:03","fail":0,"id":"s1-s4-s2","label":"Tests.Tasks.Delete","name":"Delete","pass":1,"skip":0},{"elapsed":"00:00:03","fail":0,"id":"s1-s4-s3","label":"Tests.Tasks.Update","name":"Update","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1749687114165;
+window.output["baseMillis"] = 1750027737011;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 16843;
+window.output["generated"] = 53269;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2354,7 +2364,7 @@ function hideHiddenDetailsColumns(elem) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr onclick="tagDetailSelected('${label}')" class="row-${$item.index}">
-    <td class="stats-col-name" title="${doc}">
+    <td class="stats-col-name" title="{{html doc}}">
       <div class="stat-name">
         <a href="#tags?${label}">{{html label}}</a>
         {{if info}}(${info}){{/if}}

@@ -1,0 +1,75 @@
+{
+    "create": {
+        "user":{
+            "name": "Steve Jobs",
+            "email": "jobs@apple.com",
+            "password": "pwd123"
+        },
+        "task":{
+            "name": "Criar uma nova versão do Ipod",
+            "tags": [
+                "ios",
+                "music",
+                "ipod"
+            ]
+        }
+    },
+    "duplicate": {
+        "user":{
+            "name": "Amanda Waller",
+            "email": "waller@chequemate.com",
+            "password": "pwd123"
+        },
+        "task":{
+            "name": "Recrutar novos metahumanos",
+            "tags": []
+        }
+    },
+    "tags_limit": {
+        "user":{
+            "name": "Bill Gates",
+            "email": "billgates@microsoft.com",
+            "password": "pwd123"
+        },
+        "task":{
+            "name": "Criar uma nova versão do Windows",
+            "tags": [
+                "windows",
+                "os",
+                "linux",
+                "mac",
+                "ios",
+                "android"
+            ]
+        }
+    },
+    "done":{ 
+        "user":{
+            "name": "Tony Stark",
+            "email": "tony@stark.com",
+            "password": "pwd123"
+        },
+        "task":{
+            "name": "Criar uma nova IA",
+            "tags": [
+                "jarvis",
+                "ultron",
+                "ark"
+            ]
+        }
+    },
+    "delete":{ 
+        "user":{
+            "name": "Hank Pym",
+            "email": "hank@pymtech.com",
+            "password": "pwd123"
+        },
+        "task":{
+            "name": "Criar a IA do Ultron",
+            "tags": [
+                "ia",
+                "ultron"
+            ]
+        }
+    }
+}
